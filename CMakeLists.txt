@@ -40,12 +40,12 @@ add_executable(map_compare src/map_compare.cpp)
 ament_target_dependencies(map_compare rclcpp OpenCV)
 
 add_executable(cylinder_detector src/cylinder_detector.cpp)
-ament_target_dependencies(cylinder_detector rclcpp sensor_msgs geometry_msgs visualization_msgs tf2_ros tf2_geometry_msgs)
+ament_target_dependencies(cylinder_detector rclcpp sensor_msgs geometry_msgs visualization_msgs tf2_ros tf2_geometry_msgs nav_msgs OpenCV) 
 
 install(TARGETS
   lab1
   lab2
-  lab4
+  lab4 
   lab5
   sprint2
   map_compare
