@@ -1,0 +1,16 @@
+/home/student/ros2_ws/src/lab/build/CMakeFiles/uninstall.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/lab_uninstall.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/lab1.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/lab2.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/lab4.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/lab5.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/sprint2.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/map_compare.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/cylinder_detector.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/test.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/edit_cache.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/rebuild_cache.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/list_install_components.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/install.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/install/local.dir
+/home/student/ros2_ws/src/lab/build/CMakeFiles/install/strip.dir

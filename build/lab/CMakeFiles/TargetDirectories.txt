@@ -1,0 +1,9 @@
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/uninstall.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/lab_uninstall.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/test.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/edit_cache.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/rebuild_cache.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/list_install_components.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/install.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/install/local.dir
+/home/student/ros2_ws/src/lab/build/lab/CMakeFiles/install/strip.dir
