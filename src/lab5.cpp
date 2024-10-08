@@ -4,8 +4,20 @@
 #include <opencv2/opencv.hpp>
 #include <vector>
 
+/**
+ * @brief Node that processes LaserScan messages and visualizes them as images.
+ * 
+ * The ScanToImageNode subscribes to LaserScan messages, converts them into images, 
+ * and calculates the change in the robot's yaw orientation based on the captured images. 
+ * It maintains two images: the most recent and the one before that, allowing for 
+ * relative orientation estimation.
+ */
 class ScanToImageNode : public rclcpp::Node {
 public:
+    /**
+     * @brief Constructor for the ScanToImageNode class.
+     * Initializes the node and sets up the publisher and subscriber.
+     */
     ScanToImageNode() : Node("scan_to_image_node"), angle_difference_(0.0), relative_orientaion_(0.0) {
         scan_subscriber_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
             "/scan", 10, std::bind(&ScanToImageNode::scanCallback, this, std::placeholders::_1));
@@ -22,6 +34,11 @@ public:
     }
 
 private:
+/**
+     * @brief Callback function that gets triggered whenever a new LaserScan message is received.
+     * 
+     * @param msg Shared pointer to the received LaserScan message.
+     */
     void scanCallback(const sensor_msgs::msg::LaserScan::SharedPtr msg) {
         // Purpose: This function is a callback that gets triggered whenever a new LaserScan message is received from the /scan topic.
 
@@ -70,7 +87,12 @@ private:
         }
     }
 
-
+    /**
+     * @brief Converts a LaserScan message into a binary image (cv::Mat).
+     * 
+     * @param scan Shared pointer to the LaserScan message.
+     * @return cv::Mat The resulting binary image.
+     */
     cv::Mat laserScanToMat(const sensor_msgs::msg::LaserScan::SharedPtr& scan) {
         
         // Purpose: Converts a LaserScan message into a binary image (cv::Mat), where each pixel represents the presence of an obstacle detected by the laser scanner.
@@ -112,7 +134,9 @@ private:
     //     cmd_publisher_->publish(twist_msg);
     // }
     
-
+    /**
+     * @brief Estimates the change in orientation (yaw angle) of the robot by comparing two images.
+     */
     void calculateYawChange() {
         // Purpose: Estimates the change in orientation (yaw angle) of the robot by comparing two images.
 
@@ -149,7 +173,14 @@ private:
 
     }
     
-
+    /**
+     * @brief Detects and matches features between two images.
+     * 
+     * @param img1 First image.
+     * @param img2 Second image.
+     * @param srcPoints Output vector of points from the first image.
+     * @param dstPoints Output vector of points from the second image.
+     */
     void detectAndMatchFeatures(const cv::Mat& img1, const cv::Mat& img2,
                                 std::vector<cv::Point2f>& srcPoints, std::vector<cv::Point2f>& dstPoints) {
         cv::Ptr<cv::ORB> orb = cv::ORB::create();
@@ -180,17 +211,17 @@ private:
         }
     }
 
-    rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_subscriber_;
-    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_publisher_;
+    rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr scan_subscriber_; //!< Subscriber for LaserScan messages
+    rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr cmd_publisher_; //!< Publisher for velocity commands
 
-    cv::Mat first_image_, second_image_;
-    bool first_image_captured_ = false;
-    bool second_image_captured_ = false;
+    cv::Mat first_image_, second_image_; //!< Images captured from the laser scan
+    bool first_image_captured_ = false; //!< Flag indicating if the first image has been captured
+    bool second_image_captured_ = false; //!< Flag indicating if the second image has been captured
 
-    double angle_difference_;
-    double relative_orientaion_ = 0.0;
+    double angle_difference_; //!< Change in angle between images
+    double relative_orientaion_ = 0.0; //!< Relative orientation of the robot
 
-    cv::Mat m_edge_map;
+    cv::Mat m_edge_map; //!< Edge map loaded from the file
 };
 
 int main(int argc, char* argv[]) {

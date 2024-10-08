@@ -1,0 +1,36 @@
+/*!
+
+*/
+
+// without this gap between two doxygen definition, the last group does not get
+// populated properly for some reason.
+
+/*!
+@mainpage Assignment 2: Threading, Synchronisation and Data Integrity
+
+@section intro Introduction
+Welcome to the documentation of Assignment 2!
+
+This document provides an overview of the code developed in Assignment 2, focusing on threading, 
+synchronisation and data integrity within a C++ implemented control system for autonomous vehicles in
+a simulated environment.
+
+
+@section what_does_it_do What the Code Does:
+The C++ source files are used to control the motion of an Audi R8 (Ackerman) and a Quadcopter in an
+external ROS-based simulation software. One instance of each vehicle type are spawned onto a grid 
+map and they must navigate towards designated goal locations. Each vehicle has a unique steering 
+mechanism that requires unique inputs to control:
+
+- The Audi employs an Ackerman steering model, which uses arcs to manipulate its pose as it travels.
+- The Quadcopter moves directly towards goals in a straight line, without the need to orient itself.
+
+The backend leverages multiple classes and extensive functions, primarily deriving functionality from two 
+abstract classes: `ControllerInterface` and `MissionInterface`. These interfaces provide foundational 
+method signatures used across derived classes, promoting code reusability and specialization for different 
+vehicle types.
+
+
+
+@n By Alex Li
+@n Alex.li@student.uts.edu.au

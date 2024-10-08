@@ -5,8 +5,17 @@
 #include <opencv2/imgproc/imgproc.hpp> //OpenCV functionalities for image processing and GUI.
 #include <opencv2/highgui/highgui.hpp>
 
+/**
+ * @class ImageProcessor
+ * @brief A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed image.
+ */
 class ImageProcessor : public rclcpp::Node {
 public:
+    /**
+     * @brief Constructor for the ImageProcessor node.
+     * This initializes the node, subscribes to the `/camera/image_raw` topic, and creates a publisher
+     * to publish the processed images on the `processed_image` topic.
+     */
     ImageProcessor() : Node("image_processor") {
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
             "/camera/image_raw", 10, std::bind(&ImageProcessor::image_callback, this, std::placeholders::_1)); //subscribes to /camera/image_raw topic
@@ -14,6 +23,11 @@ public:
     }
 
 private:
+    /**
+     * @brief Callback function that is triggered each time a new image is received.
+     * This function processes the image, adds a green circle at the center, and republishes it.
+     * @param msg The received image message from the `/camera/image_raw` topic.
+     */
     void image_callback(const sensor_msgs::msg::Image::SharedPtr msg) { //called every time a new image message is received on the subscribed topic
         RCLCPP_INFO(this->get_logger(), "Receiving video frame"); //Logs that a video frame is received
 
@@ -44,7 +58,16 @@ private:
         publisher_->publish(*processed_image_msg);
     }
 
+    /**
+     * @brief Subscription object for receiving image messages.
+     * This subscribes to the `/camera/image_raw` topic.
+     */
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
+
+    /**
+     * @brief Publisher object for sending processed image messages.
+     * This publishes processed images to the `processed_image` topic.
+     */
     rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr publisher_;
 };
 

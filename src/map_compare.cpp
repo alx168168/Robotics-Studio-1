@@ -3,9 +3,16 @@
 #include <opencv2/features2d.hpp>
 // #include <opencv2/xfeatures2d.hpp>
 
+/**
+ * @class MapCompareNode
+ * @brief A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching.
+ */
 class MapCompareNode : public rclcpp::Node
 {
 public:
+    /**
+     * @brief Constructs the MapCompareNode and initiates the map overlay process.
+     */
     MapCompareNode() : Node("map_compare_node")
     {
         // Paths to your maps
@@ -15,6 +22,17 @@ public:
     }
 
 private:
+    /**
+     * @brief Overlays two maps by aligning them and combining their visuals.
+     * 
+     * This function loads the two specified map images, resizes the second map to match the first,
+     * detects features in both maps, matches these features, and computes the homography
+     * transformation to align the second map with the first. It then creates an overlay
+     * image and saves it.
+     * 
+     * @param map1_path The file path to the first map image.
+     * @param map2_path The file path to the second map image.
+     */
     void overlayMaps(const std::string& map1_path, const std::string& map2_path)
     {
         // Load the two maps
