@@ -1,0 +1,4 @@
+<map id="ImageProcessor" name="ImageProcessor">
+<area shape="rect" id="node1" title="A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed im..." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node2" title=" " alt="" coords="17,5,120,32"/>
+</map>

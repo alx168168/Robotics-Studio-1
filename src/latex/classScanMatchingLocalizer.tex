@@ -1,0 +1,55 @@
+\hypertarget{classScanMatchingLocalizer}{}\doxysection{Scan\+Matching\+Localizer Class Reference}
+\label{classScanMatchingLocalizer}\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+
+
+A class that implements scan matching localization for a robot using occupancy grid maps and laser scans.  
+
+
+
+
+Inheritance diagram for Scan\+Matching\+Localizer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classScanMatchingLocalizer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scan\+Matching\+Localizer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classScanMatchingLocalizer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScanMatchingLocalizer_a2311166d8e8c1327f0e2edb03d7814d9}{Scan\+Matching\+Localizer}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classScanMatchingLocalizer}{Scan\+Matching\+Localizer}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that implements scan matching localization for a robot using occupancy grid maps and laser scans. 
+
+This class subscribes to an occupancy grid map and laser scan data to perform scan matching, enabling the robot to determine its position within the map. It processes incoming data, extracts relevant sections from the map, detects edges, and calculates the robot\textquotesingle{}s orientation based on the laser scans.
+
+The class also publishes velocity commands to control the robot\textquotesingle{}s movement. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a2311166d8e8c1327f0e2edb03d7814d9}\label{classScanMatchingLocalizer_a2311166d8e8c1327f0e2edb03d7814d9}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{ScanMatchingLocalizer()}{ScanMatchingLocalizer()}}
+{\footnotesize\ttfamily Scan\+Matching\+Localizer\+::\+Scan\+Matching\+Localizer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classScanMatchingLocalizer}{Scan\+Matching\+Localizer}} object. 
+
+Initializes the node, sets up subscribers for the occupancy grid and laser scan topics, and creates a publisher for velocity commands. Additionally, it initializes Open\+CV windows for displaying the map and laser scan images. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sprint2.\+cpp\end{DoxyCompactItemize}

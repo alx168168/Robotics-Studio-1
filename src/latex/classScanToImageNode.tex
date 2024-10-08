@@ -1,0 +1,41 @@
+\hypertarget{classScanToImageNode}{}\doxysection{Scan\+To\+Image\+Node Class Reference}
+\label{classScanToImageNode}\index{ScanToImageNode@{ScanToImageNode}}
+
+
+Node that processes Laser\+Scan messages and visualizes them as images.  
+
+
+
+
+Inheritance diagram for Scan\+To\+Image\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classScanToImageNode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scan\+To\+Image\+Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classScanToImageNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}\label{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}} 
+\mbox{\hyperlink{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}{Scan\+To\+Image\+Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classScanToImageNode}{Scan\+To\+Image\+Node}} class. Initializes the node and sets up the publisher and subscriber. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Node that processes Laser\+Scan messages and visualizes them as images. 
+
+The \mbox{\hyperlink{classScanToImageNode}{Scan\+To\+Image\+Node}} subscribes to Laser\+Scan messages, converts them into images, and calculates the change in the robot\textquotesingle{}s yaw orientation based on the captured images. It maintains two images\+: the most recent and the one before that, allowing for relative orientation estimation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lab5.\+cpp\end{DoxyCompactItemize}
