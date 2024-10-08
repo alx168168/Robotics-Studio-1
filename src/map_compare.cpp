@@ -18,6 +18,8 @@ public:
         // Paths to your maps
         std::string map1_path = "/home/student/ros2_ws/src/lab/maps/cartographer_map.pgm";
         std::string map2_path = "/home/student/ros2_ws/src/lab/maps/final_world.pgm";
+        // std::string map1_path = "/home/student/ros2_ws/src/lab/maps/cart_world_final.pgm";
+        // std::string map2_path = "/home/student/ros2_ws/src/lab/maps/world_final.pgm";
         overlayMaps(map1_path, map2_path);
     }
 
@@ -97,6 +99,8 @@ private:
         // Save and display the overlay
         cv::imwrite("/home/student/ros2_ws/src/lab/maps/overlaid_map1.pgm", overlay);
         cv::imwrite("/home/student/ros2_ws/src/lab/maps/overlaid_map1.png", overlay);
+        // cv::imwrite("/home/student/ros2_ws/src/lab/maps/overlaid_map2.pgm", overlay);
+        // cv::imwrite("/home/student/ros2_ws/src/lab/maps/overlaid_map2.png", overlay);
         cv::imshow("Overlayed Map", overlay);
         cv::waitKey(0);  // Wait for user to press any key
 

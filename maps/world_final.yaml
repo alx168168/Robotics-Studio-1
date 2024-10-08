@@ -4,4 +4,4 @@ origin: [-20.000000, -20.000000, 0.0]
 resolution: 0.020000
 mode: trinary
 occupied_thresh: 0.95
-image: /home/student/maps/mine2.pgm
+image: /home/student/world_final.pgm
