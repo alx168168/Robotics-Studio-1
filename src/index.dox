@@ -1,19 +1,14 @@
 /*!
+\mainpage Robotics Studio 1 Code Documentation
 
-*/
+\section intro Introduction
 
-//
-//
-
-/*!
-@mainpage Robotics Studio 1 Code Documentation
-
-@section intro Introduction
-Welcome to the documentation of the work done in the subject 41068 Robotics Studio 1 at UTS!
+Welcome to the documentation of the work done in the subject **41068 Robotics Studio 1** at UTS!
 
 This document provides an overview of the code developed in this subject. It includes:
-- lab work
-- group project
+- Lab work
+- Group project
 
-@n By Alex Li
-@n Alex.li@student.uts.edu.au
+\author Alex Li
+\email alex.li@student.uts.edu.au
+*/
