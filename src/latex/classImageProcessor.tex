@@ -26,14 +26,79 @@ Collaboration diagram for Image\+Processor\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classImageProcessor_aa9201a4d14b20ac968919145db3a588b}\label{classImageProcessor_aa9201a4d14b20ac968919145db3a588b}} 
 \mbox{\hyperlink{classImageProcessor_aa9201a4d14b20ac968919145db3a588b}{Image\+Processor}} ()
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classImageProcessor}{Image\+Processor}} node. This initializes the node, subscribes to the {\ttfamily /camera/image\+\_\+raw} topic, and creates a publisher to publish the processed images on the {\ttfamily processed\+\_\+image} topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classImageProcessor_a6e3d0f91bdf0d06d46a4d635778f1344}{image\+\_\+callback}} (const sensor\+\_\+msgs\+::msg\+::\+Image\+::\+Shared\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em Callback function that is triggered each time a new image is received. This function processes the image, adds a green circle at the center, and republishes it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Image $>$\+::Shared\+Ptr \mbox{\hyperlink{classImageProcessor_ad3a5f2b044695ea5925d9af0e5479627}{subscription\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Subscription object for receiving image messages. This subscribes to the {\ttfamily /camera/image\+\_\+raw} topic. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ sensor\+\_\+msgs\+::msg\+::\+Image $>$\+::Shared\+Ptr \mbox{\hyperlink{classImageProcessor_a81881aad449f3b8af53eebdb3a608184}{publisher\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher object for sending processed image messages. This publishes processed images to the {\ttfamily processed\+\_\+image} topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed image. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classImageProcessor_aa9201a4d14b20ac968919145db3a588b}\label{classImageProcessor_aa9201a4d14b20ac968919145db3a588b}} 
+\index{ImageProcessor@{ImageProcessor}!ImageProcessor@{ImageProcessor}}
+\index{ImageProcessor@{ImageProcessor}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{ImageProcessor()}{ImageProcessor()}}
+{\footnotesize\ttfamily Image\+Processor\+::\+Image\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classImageProcessor}{Image\+Processor}} node. This initializes the node, subscribes to the {\ttfamily /camera/image\+\_\+raw} topic, and creates a publisher to publish the processed images on the {\ttfamily processed\+\_\+image} topic. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classImageProcessor_a6e3d0f91bdf0d06d46a4d635778f1344}\label{classImageProcessor_a6e3d0f91bdf0d06d46a4d635778f1344}} 
+\index{ImageProcessor@{ImageProcessor}!image\_callback@{image\_callback}}
+\index{image\_callback@{image\_callback}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{image\_callback()}{image\_callback()}}
+{\footnotesize\ttfamily void Image\+Processor\+::image\+\_\+callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Image\+::\+Shared\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function that is triggered each time a new image is received. This function processes the image, adds a green circle at the center, and republishes it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The received image message from the {\ttfamily /camera/image\+\_\+raw} topic. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classImageProcessor_a81881aad449f3b8af53eebdb3a608184}\label{classImageProcessor_a81881aad449f3b8af53eebdb3a608184}} 
+\index{ImageProcessor@{ImageProcessor}!publisher\_@{publisher\_}}
+\index{publisher\_@{publisher\_}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{publisher\_}{publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$sensor\+\_\+msgs\+::msg\+::\+Image$>$\+::Shared\+Ptr Image\+Processor\+::publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher object for sending processed image messages. This publishes processed images to the {\ttfamily processed\+\_\+image} topic. 
+
+\mbox{\Hypertarget{classImageProcessor_ad3a5f2b044695ea5925d9af0e5479627}\label{classImageProcessor_ad3a5f2b044695ea5925d9af0e5479627}} 
+\index{ImageProcessor@{ImageProcessor}!subscription\_@{subscription\_}}
+\index{subscription\_@{subscription\_}!ImageProcessor@{ImageProcessor}}
+\doxysubsubsection{\texorpdfstring{subscription\_}{subscription\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Image$>$\+::Shared\+Ptr Image\+Processor\+::subscription\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subscription object for receiving image messages. This subscribes to the {\ttfamily /camera/image\+\_\+raw} topic. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-lab1.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{lab1_8cpp}{lab1.\+cpp}}\end{DoxyCompactItemize}

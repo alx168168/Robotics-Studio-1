@@ -26,9 +26,62 @@ Collaboration diagram for Dead\+Reckoning\+Node\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classDeadReckoningNode_ac0237497c0d125f13a2b46725b199cb5}\label{classDeadReckoningNode_ac0237497c0d125f13a2b46725b199cb5}} 
 \mbox{\hyperlink{classDeadReckoningNode_ac0237497c0d125f13a2b46725b199cb5}{Dead\+Reckoning\+Node}} ()
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classDeadReckoningNode}{Dead\+Reckoning\+Node}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDeadReckoningNode_adf1bd7b5939aa5ec34bf39c19b105dec}{odom\+\_\+callback}} (const nav\+\_\+msgs\+::msg\+::\+Odometry\+::\+Shared\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em Callback function for odometry messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDeadReckoningNode_a59a437dd7e3beefa28ea12f2a77acf4a}{timer\+\_\+callback}} ()
+\begin{DoxyCompactList}\small\item\em Timer callback for updating the robot\textquotesingle{}s pose and publishing commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDeadReckoningNode_a359f6cc80b8aec27ed3251ce8f6864c4}{publish\+\_\+noisy\+\_\+odometry}} (const rclcpp\+::\+Time \&current\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Publishes noisy odometry data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDeadReckoningNode_a28a48cdc0fc693bc34fcb831a690ea8f}{publish\+\_\+cmd\+\_\+vel}} ()
+\begin{DoxyCompactList}\small\item\em Publishes the velocity command based on the robot\textquotesingle{}s direction. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a764dec275e5788578198e2e30bdc0069}{normalize\+\_\+angle}} (double angle)
+\begin{DoxyCompactList}\small\item\em Normalizes the angle to the range \mbox{[}0, 360). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::Shared\+Ptr \mbox{\hyperlink{classDeadReckoningNode_a2f8f7625551f18b53c3be1598093bb3e}{cmd\+\_\+vel\+\_\+pub\+\_\+}}
+\begin{DoxyCompactList}\small\item\em velocity command publisher \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ nav\+\_\+msgs\+::msg\+::\+Odometry $>$\+::Shared\+Ptr \mbox{\hyperlink{classDeadReckoningNode_a8a6a31b9662ae947ab28f64bb6b5fd1e}{odom\+\_\+noisy\+\_\+pub\+\_\+}}
+\begin{DoxyCompactList}\small\item\em noisy odometry publisher \end{DoxyCompactList}\item 
+rclcpp\+::\+Subscription$<$ nav\+\_\+msgs\+::msg\+::\+Odometry $>$\+::Shared\+Ptr \mbox{\hyperlink{classDeadReckoningNode_a72ad03aa01dc0c4b56e6bd084af6b8c5}{odom\+\_\+sub\+\_\+}}
+\begin{DoxyCompactList}\small\item\em odometry subscriber \end{DoxyCompactList}\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classDeadReckoningNode_a8c95fc3e3ad81efa3da41ccd9f3d5f3b}{timer\+\_\+}}
+\begin{DoxyCompactList}\small\item\em timer for periodic updates \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a68e2d501fcff12e6e584a110b00217b5}{linear\+\_\+speed\+\_\+}}
+\begin{DoxyCompactList}\small\item\em linear speed \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a84ee1e874f480325dd49c789db3263d7}{angular\+\_\+speed\+\_\+}}
+\begin{DoxyCompactList}\small\item\em angular speed \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_acbf071c6ac5aee7cb33259bbd48a78f7}{distance\+\_\+}}
+\begin{DoxyCompactList}\small\item\em distance to travel \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDeadReckoningNode_a3ea5fa3de31128be30876cba461ccea5}{direction\+\_\+}}
+\begin{DoxyCompactList}\small\item\em movement direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDeadReckoningNode_a14a3e653ffbf1bf704dd2173f006c48a}{initialized\+\_\+}}
+\begin{DoxyCompactList}\small\item\em initialization flag \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a24f2f8073c72228dbc311a26cf9f4ebc}{initial\+\_\+pose\+\_\+x\+\_\+}}
+\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a6f92ef9bd77fff17a1282bc02cfd2993}{initial\+\_\+pose\+\_\+y\+\_\+}}
+\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a5791b6e85b7a49d6228b833cbc21a8bb}{initial\+\_\+pose\+\_\+theta\+\_\+}}
+\begin{DoxyCompactList}\small\item\em initial pose variables \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDeadReckoningNode_ae222453536b72b6e1fd10aadbf4581aa}{current\+\_\+pose\+\_\+x\+\_\+}}
+\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a7cec517105088c2a436f5e1aa5442379}{current\+\_\+pose\+\_\+y\+\_\+}}
+\item 
+double \mbox{\hyperlink{classDeadReckoningNode_a1a4e728d0fd84b09a66335ce3a62251c}{current\+\_\+pose\+\_\+theta\+\_\+}}
+\begin{DoxyCompactList}\small\item\em current pose variables \end{DoxyCompactList}\item 
+rclcpp\+::\+Time \mbox{\hyperlink{classDeadReckoningNode_a6a759a62a033b625326ec6ddfe74c00f}{last\+\_\+time\+\_\+}}
+\begin{DoxyCompactList}\small\item\em last time update \end{DoxyCompactList}\item 
+std\+::random\+\_\+device \mbox{\hyperlink{classDeadReckoningNode_a18f8ff294e963e088d252f8f8f522eb6}{rd\+\_\+}}
+\begin{DoxyCompactList}\small\item\em random device for noise generation \end{DoxyCompactList}\item 
+std\+::mt19937 \mbox{\hyperlink{classDeadReckoningNode_ac83096831074453e6b3a737d415c9202}{gen\+\_\+}}
+\begin{DoxyCompactList}\small\item\em random number generator \end{DoxyCompactList}\item 
+std\+::normal\+\_\+distribution \mbox{\hyperlink{classDeadReckoningNode_a53813b0d6cd2aa643d9914720f571e6a}{noise\+\_\+dist\+\_\+}}
+\begin{DoxyCompactList}\small\item\em noise distribution \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -36,6 +89,269 @@ A node that implements dead reckoning for a robot.
 
 This node subscribes to odometry messages, publishes noisy odometry, and commands the robot\textquotesingle{}s velocity based on the given parameters. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDeadReckoningNode_ac0237497c0d125f13a2b46725b199cb5}\label{classDeadReckoningNode_ac0237497c0d125f13a2b46725b199cb5}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!DeadReckoningNode@{DeadReckoningNode}}
+\index{DeadReckoningNode@{DeadReckoningNode}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{DeadReckoningNode()}{DeadReckoningNode()}}
+{\footnotesize\ttfamily Dead\+Reckoning\+Node\+::\+Dead\+Reckoning\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classDeadReckoningNode}{Dead\+Reckoning\+Node}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeadReckoningNode_a764dec275e5788578198e2e30bdc0069}\label{classDeadReckoningNode_a764dec275e5788578198e2e30bdc0069}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!normalize\_angle@{normalize\_angle}}
+\index{normalize\_angle@{normalize\_angle}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{normalize\_angle()}{normalize\_angle()}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::normalize\+\_\+angle (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Normalizes the angle to the range \mbox{[}0, 360). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle to normalize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The normalized angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDeadReckoningNode_adf1bd7b5939aa5ec34bf39c19b105dec}\label{classDeadReckoningNode_adf1bd7b5939aa5ec34bf39c19b105dec}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!odom\_callback@{odom\_callback}}
+\index{odom\_callback@{odom\_callback}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{odom\_callback()}{odom\_callback()}}
+{\footnotesize\ttfamily void Dead\+Reckoning\+Node\+::odom\+\_\+callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::msg\+::\+Odometry\+::\+Shared\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function for odometry messages. 
+
+Initializes the pose of the robot when the first odometry message is received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The odometry message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDeadReckoningNode_a28a48cdc0fc693bc34fcb831a690ea8f}\label{classDeadReckoningNode_a28a48cdc0fc693bc34fcb831a690ea8f}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!publish\_cmd\_vel@{publish\_cmd\_vel}}
+\index{publish\_cmd\_vel@{publish\_cmd\_vel}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{publish\_cmd\_vel()}{publish\_cmd\_vel()}}
+{\footnotesize\ttfamily void Dead\+Reckoning\+Node\+::publish\+\_\+cmd\+\_\+vel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Publishes the velocity command based on the robot\textquotesingle{}s direction. 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a359f6cc80b8aec27ed3251ce8f6864c4}\label{classDeadReckoningNode_a359f6cc80b8aec27ed3251ce8f6864c4}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!publish\_noisy\_odometry@{publish\_noisy\_odometry}}
+\index{publish\_noisy\_odometry@{publish\_noisy\_odometry}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{publish\_noisy\_odometry()}{publish\_noisy\_odometry()}}
+{\footnotesize\ttfamily void Dead\+Reckoning\+Node\+::publish\+\_\+noisy\+\_\+odometry (\begin{DoxyParamCaption}\item[{const rclcpp\+::\+Time \&}]{current\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Publishes noisy odometry data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current\+\_\+time} & The current timestamp. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDeadReckoningNode_a59a437dd7e3beefa28ea12f2a77acf4a}\label{classDeadReckoningNode_a59a437dd7e3beefa28ea12f2a77acf4a}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!timer\_callback@{timer\_callback}}
+\index{timer\_callback@{timer\_callback}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{timer\_callback()}{timer\_callback()}}
+{\footnotesize\ttfamily void Dead\+Reckoning\+Node\+::timer\+\_\+callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Timer callback for updating the robot\textquotesingle{}s pose and publishing commands. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDeadReckoningNode_a84ee1e874f480325dd49c789db3263d7}\label{classDeadReckoningNode_a84ee1e874f480325dd49c789db3263d7}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!angular\_speed\_@{angular\_speed\_}}
+\index{angular\_speed\_@{angular\_speed\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{angular\_speed\_}{angular\_speed\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::angular\+\_\+speed\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+angular speed 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a2f8f7625551f18b53c3be1598093bb3e}\label{classDeadReckoningNode_a2f8f7625551f18b53c3be1598093bb3e}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!cmd\_vel\_pub\_@{cmd\_vel\_pub\_}}
+\index{cmd\_vel\_pub\_@{cmd\_vel\_pub\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{cmd\_vel\_pub\_}{cmd\_vel\_pub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::Shared\+Ptr Dead\+Reckoning\+Node\+::cmd\+\_\+vel\+\_\+pub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+velocity command publisher 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a1a4e728d0fd84b09a66335ce3a62251c}\label{classDeadReckoningNode_a1a4e728d0fd84b09a66335ce3a62251c}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!current\_pose\_theta\_@{current\_pose\_theta\_}}
+\index{current\_pose\_theta\_@{current\_pose\_theta\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{current\_pose\_theta\_}{current\_pose\_theta\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::current\+\_\+pose\+\_\+theta\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+current pose variables 
+
+\mbox{\Hypertarget{classDeadReckoningNode_ae222453536b72b6e1fd10aadbf4581aa}\label{classDeadReckoningNode_ae222453536b72b6e1fd10aadbf4581aa}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!current\_pose\_x\_@{current\_pose\_x\_}}
+\index{current\_pose\_x\_@{current\_pose\_x\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{current\_pose\_x\_}{current\_pose\_x\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::current\+\_\+pose\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDeadReckoningNode_a7cec517105088c2a436f5e1aa5442379}\label{classDeadReckoningNode_a7cec517105088c2a436f5e1aa5442379}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!current\_pose\_y\_@{current\_pose\_y\_}}
+\index{current\_pose\_y\_@{current\_pose\_y\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{current\_pose\_y\_}{current\_pose\_y\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::current\+\_\+pose\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDeadReckoningNode_a3ea5fa3de31128be30876cba461ccea5}\label{classDeadReckoningNode_a3ea5fa3de31128be30876cba461ccea5}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!direction\_@{direction\_}}
+\index{direction\_@{direction\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{direction\_}{direction\_}}
+{\footnotesize\ttfamily std\+::string Dead\+Reckoning\+Node\+::direction\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+movement direction 
+
+\mbox{\Hypertarget{classDeadReckoningNode_acbf071c6ac5aee7cb33259bbd48a78f7}\label{classDeadReckoningNode_acbf071c6ac5aee7cb33259bbd48a78f7}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!distance\_@{distance\_}}
+\index{distance\_@{distance\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{distance\_}{distance\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::distance\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+distance to travel 
+
+\mbox{\Hypertarget{classDeadReckoningNode_ac83096831074453e6b3a737d415c9202}\label{classDeadReckoningNode_ac83096831074453e6b3a737d415c9202}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!gen\_@{gen\_}}
+\index{gen\_@{gen\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{gen\_}{gen\_}}
+{\footnotesize\ttfamily std\+::mt19937 Dead\+Reckoning\+Node\+::gen\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+random number generator 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a5791b6e85b7a49d6228b833cbc21a8bb}\label{classDeadReckoningNode_a5791b6e85b7a49d6228b833cbc21a8bb}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!initial\_pose\_theta\_@{initial\_pose\_theta\_}}
+\index{initial\_pose\_theta\_@{initial\_pose\_theta\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{initial\_pose\_theta\_}{initial\_pose\_theta\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::initial\+\_\+pose\+\_\+theta\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initial pose variables 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a24f2f8073c72228dbc311a26cf9f4ebc}\label{classDeadReckoningNode_a24f2f8073c72228dbc311a26cf9f4ebc}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!initial\_pose\_x\_@{initial\_pose\_x\_}}
+\index{initial\_pose\_x\_@{initial\_pose\_x\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{initial\_pose\_x\_}{initial\_pose\_x\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::initial\+\_\+pose\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDeadReckoningNode_a6f92ef9bd77fff17a1282bc02cfd2993}\label{classDeadReckoningNode_a6f92ef9bd77fff17a1282bc02cfd2993}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!initial\_pose\_y\_@{initial\_pose\_y\_}}
+\index{initial\_pose\_y\_@{initial\_pose\_y\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{initial\_pose\_y\_}{initial\_pose\_y\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::initial\+\_\+pose\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDeadReckoningNode_a14a3e653ffbf1bf704dd2173f006c48a}\label{classDeadReckoningNode_a14a3e653ffbf1bf704dd2173f006c48a}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!initialized\_@{initialized\_}}
+\index{initialized\_@{initialized\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{initialized\_}{initialized\_}}
+{\footnotesize\ttfamily bool Dead\+Reckoning\+Node\+::initialized\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+initialization flag 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a6a759a62a033b625326ec6ddfe74c00f}\label{classDeadReckoningNode_a6a759a62a033b625326ec6ddfe74c00f}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!last\_time\_@{last\_time\_}}
+\index{last\_time\_@{last\_time\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{last\_time\_}{last\_time\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Time Dead\+Reckoning\+Node\+::last\+\_\+time\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+last time update 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a68e2d501fcff12e6e584a110b00217b5}\label{classDeadReckoningNode_a68e2d501fcff12e6e584a110b00217b5}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!linear\_speed\_@{linear\_speed\_}}
+\index{linear\_speed\_@{linear\_speed\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{linear\_speed\_}{linear\_speed\_}}
+{\footnotesize\ttfamily double Dead\+Reckoning\+Node\+::linear\+\_\+speed\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+linear speed 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a53813b0d6cd2aa643d9914720f571e6a}\label{classDeadReckoningNode_a53813b0d6cd2aa643d9914720f571e6a}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!noise\_dist\_@{noise\_dist\_}}
+\index{noise\_dist\_@{noise\_dist\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{noise\_dist\_}{noise\_dist\_}}
+{\footnotesize\ttfamily std\+::normal\+\_\+distribution Dead\+Reckoning\+Node\+::noise\+\_\+dist\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+noise distribution 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a8a6a31b9662ae947ab28f64bb6b5fd1e}\label{classDeadReckoningNode_a8a6a31b9662ae947ab28f64bb6b5fd1e}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!odom\_noisy\_pub\_@{odom\_noisy\_pub\_}}
+\index{odom\_noisy\_pub\_@{odom\_noisy\_pub\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{odom\_noisy\_pub\_}{odom\_noisy\_pub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$nav\+\_\+msgs\+::msg\+::\+Odometry$>$\+::Shared\+Ptr Dead\+Reckoning\+Node\+::odom\+\_\+noisy\+\_\+pub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+noisy odometry publisher 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a72ad03aa01dc0c4b56e6bd084af6b8c5}\label{classDeadReckoningNode_a72ad03aa01dc0c4b56e6bd084af6b8c5}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!odom\_sub\_@{odom\_sub\_}}
+\index{odom\_sub\_@{odom\_sub\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{odom\_sub\_}{odom\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$nav\+\_\+msgs\+::msg\+::\+Odometry$>$\+::Shared\+Ptr Dead\+Reckoning\+Node\+::odom\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+odometry subscriber 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a18f8ff294e963e088d252f8f8f522eb6}\label{classDeadReckoningNode_a18f8ff294e963e088d252f8f8f522eb6}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!rd\_@{rd\_}}
+\index{rd\_@{rd\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{rd\_}{rd\_}}
+{\footnotesize\ttfamily std\+::random\+\_\+device Dead\+Reckoning\+Node\+::rd\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+random device for noise generation 
+
+\mbox{\Hypertarget{classDeadReckoningNode_a8c95fc3e3ad81efa3da41ccd9f3d5f3b}\label{classDeadReckoningNode_a8c95fc3e3ad81efa3da41ccd9f3d5f3b}} 
+\index{DeadReckoningNode@{DeadReckoningNode}!timer\_@{timer\_}}
+\index{timer\_@{timer\_}!DeadReckoningNode@{DeadReckoningNode}}
+\doxysubsubsection{\texorpdfstring{timer\_}{timer\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Dead\+Reckoning\+Node\+::timer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+timer for periodic updates 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-lab4.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{lab4_8cpp}{lab4.\+cpp}}\end{DoxyCompactItemize}

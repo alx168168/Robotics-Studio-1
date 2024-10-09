@@ -26,9 +26,40 @@ Collaboration diagram for Scan\+To\+Image\+Node\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}\label{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}} 
 \mbox{\hyperlink{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}{Scan\+To\+Image\+Node}} ()
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classScanToImageNode}{Scan\+To\+Image\+Node}} class. Initializes the node and sets up the publisher and subscriber. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScanToImageNode_abf50ea2264374d956181fb9a0bef0da6}{scan\+Callback}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em Callback function that gets triggered whenever a new Laser\+Scan message is received. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanToImageNode_a8872fcddf81ba73b21e2e51796b67d02}{laser\+Scan\+To\+Mat}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr \&scan)
+\begin{DoxyCompactList}\small\item\em Converts a Laser\+Scan message into a binary image (cv\+::\+Mat). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScanToImageNode_a98ed50184ea9a64521bdd4b5b6cdce6f}{calculate\+Yaw\+Change}} ()
+\begin{DoxyCompactList}\small\item\em Estimates the change in orientation (yaw angle) of the robot by comparing two images. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScanToImageNode_a27aecec992270128e88f9c4c2b2cc5ab}{detect\+And\+Match\+Features}} (const cv\+::\+Mat \&img1, const cv\+::\+Mat \&img2, std\+::vector$<$ cv\+::\+Point2f $>$ \&src\+Points, std\+::vector$<$ cv\+::\+Point2f $>$ \&dst\+Points)
+\begin{DoxyCompactList}\small\item\em Detects and matches features between two images. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classScanToImageNode_ae11d3367d1793e2d4754b0e1fbdc3ec9}{scan\+\_\+subscriber\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Subscriber for Laser\+Scan messages. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::Shared\+Ptr \mbox{\hyperlink{classScanToImageNode_ac3be01f293c10f9e49ac078b3cffc9f2}{cmd\+\_\+publisher\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher for velocity commands. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanToImageNode_a736f6e3e2b584d3b861e4c24c3ce45c6}{first\+\_\+image\+\_\+}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanToImageNode_ac8b40d31254d3a81ac71eb534626fa09}{second\+\_\+image\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Images captured from the laser scan. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classScanToImageNode_adeb4810333a03d0c50ba725aa4865e6a}{first\+\_\+image\+\_\+captured\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the first image has been captured. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classScanToImageNode_aaaffec2ca4411ef9f882c578e893512f}{second\+\_\+image\+\_\+captured\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if the second image has been captured. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classScanToImageNode_a83af0146933a4086dc414553fb72dd8b}{angle\+\_\+difference\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Change in angle between images. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classScanToImageNode_a3b55e15bc2c927b2ef3b96289949acb0}{relative\+\_\+orientaion\+\_\+}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Relative orientation of the robot. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanToImageNode_ac1d9c8479606fd7d93e9bc317ba5bccd}{m\+\_\+edge\+\_\+map}}
+\begin{DoxyCompactList}\small\item\em Edge map loaded from the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -36,6 +67,175 @@ Node that processes Laser\+Scan messages and visualizes them as images.
 
 The \mbox{\hyperlink{classScanToImageNode}{Scan\+To\+Image\+Node}} subscribes to Laser\+Scan messages, converts them into images, and calculates the change in the robot\textquotesingle{}s yaw orientation based on the captured images. It maintains two images\+: the most recent and the one before that, allowing for relative orientation estimation. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}\label{classScanToImageNode_a95316c7a60dab8c1ad9c78441c897feb}} 
+\index{ScanToImageNode@{ScanToImageNode}!ScanToImageNode@{ScanToImageNode}}
+\index{ScanToImageNode@{ScanToImageNode}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{ScanToImageNode()}{ScanToImageNode()}}
+{\footnotesize\ttfamily Scan\+To\+Image\+Node\+::\+Scan\+To\+Image\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classScanToImageNode}{Scan\+To\+Image\+Node}} class. Initializes the node and sets up the publisher and subscriber. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScanToImageNode_a98ed50184ea9a64521bdd4b5b6cdce6f}\label{classScanToImageNode_a98ed50184ea9a64521bdd4b5b6cdce6f}} 
+\index{ScanToImageNode@{ScanToImageNode}!calculateYawChange@{calculateYawChange}}
+\index{calculateYawChange@{calculateYawChange}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{calculateYawChange()}{calculateYawChange()}}
+{\footnotesize\ttfamily void Scan\+To\+Image\+Node\+::calculate\+Yaw\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Estimates the change in orientation (yaw angle) of the robot by comparing two images. 
+
+\mbox{\Hypertarget{classScanToImageNode_a27aecec992270128e88f9c4c2b2cc5ab}\label{classScanToImageNode_a27aecec992270128e88f9c4c2b2cc5ab}} 
+\index{ScanToImageNode@{ScanToImageNode}!detectAndMatchFeatures@{detectAndMatchFeatures}}
+\index{detectAndMatchFeatures@{detectAndMatchFeatures}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{detectAndMatchFeatures()}{detectAndMatchFeatures()}}
+{\footnotesize\ttfamily void Scan\+To\+Image\+Node\+::detect\+And\+Match\+Features (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{img1,  }\item[{const cv\+::\+Mat \&}]{img2,  }\item[{std\+::vector$<$ cv\+::\+Point2f $>$ \&}]{src\+Points,  }\item[{std\+::vector$<$ cv\+::\+Point2f $>$ \&}]{dst\+Points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Detects and matches features between two images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img1} & First image. \\
+\hline
+{\em img2} & Second image. \\
+\hline
+{\em src\+Points} & Output vector of points from the first image. \\
+\hline
+{\em dst\+Points} & Output vector of points from the second image. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScanToImageNode_a8872fcddf81ba73b21e2e51796b67d02}\label{classScanToImageNode_a8872fcddf81ba73b21e2e51796b67d02}} 
+\index{ScanToImageNode@{ScanToImageNode}!laserScanToMat@{laserScanToMat}}
+\index{laserScanToMat@{laserScanToMat}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{laserScanToMat()}{laserScanToMat()}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+To\+Image\+Node\+::laser\+Scan\+To\+Mat (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr \&}]{scan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts a Laser\+Scan message into a binary image (cv\+::\+Mat). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan} & Shared pointer to the Laser\+Scan message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cv\+::\+Mat The resulting binary image. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanToImageNode_abf50ea2264374d956181fb9a0bef0da6}\label{classScanToImageNode_abf50ea2264374d956181fb9a0bef0da6}} 
+\index{ScanToImageNode@{ScanToImageNode}!scanCallback@{scanCallback}}
+\index{scanCallback@{scanCallback}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{scanCallback()}{scanCallback()}}
+{\footnotesize\ttfamily void Scan\+To\+Image\+Node\+::scan\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function that gets triggered whenever a new Laser\+Scan message is received. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Shared pointer to the received Laser\+Scan message. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classScanToImageNode_a83af0146933a4086dc414553fb72dd8b}\label{classScanToImageNode_a83af0146933a4086dc414553fb72dd8b}} 
+\index{ScanToImageNode@{ScanToImageNode}!angle\_difference\_@{angle\_difference\_}}
+\index{angle\_difference\_@{angle\_difference\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{angle\_difference\_}{angle\_difference\_}}
+{\footnotesize\ttfamily double Scan\+To\+Image\+Node\+::angle\+\_\+difference\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Change in angle between images. 
+
+\mbox{\Hypertarget{classScanToImageNode_ac3be01f293c10f9e49ac078b3cffc9f2}\label{classScanToImageNode_ac3be01f293c10f9e49ac078b3cffc9f2}} 
+\index{ScanToImageNode@{ScanToImageNode}!cmd\_publisher\_@{cmd\_publisher\_}}
+\index{cmd\_publisher\_@{cmd\_publisher\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{cmd\_publisher\_}{cmd\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::Shared\+Ptr Scan\+To\+Image\+Node\+::cmd\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher for velocity commands. 
+
+\mbox{\Hypertarget{classScanToImageNode_a736f6e3e2b584d3b861e4c24c3ce45c6}\label{classScanToImageNode_a736f6e3e2b584d3b861e4c24c3ce45c6}} 
+\index{ScanToImageNode@{ScanToImageNode}!first\_image\_@{first\_image\_}}
+\index{first\_image\_@{first\_image\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{first\_image\_}{first\_image\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+To\+Image\+Node\+::first\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanToImageNode_adeb4810333a03d0c50ba725aa4865e6a}\label{classScanToImageNode_adeb4810333a03d0c50ba725aa4865e6a}} 
+\index{ScanToImageNode@{ScanToImageNode}!first\_image\_captured\_@{first\_image\_captured\_}}
+\index{first\_image\_captured\_@{first\_image\_captured\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{first\_image\_captured\_}{first\_image\_captured\_}}
+{\footnotesize\ttfamily bool Scan\+To\+Image\+Node\+::first\+\_\+image\+\_\+captured\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if the first image has been captured. 
+
+\mbox{\Hypertarget{classScanToImageNode_ac1d9c8479606fd7d93e9bc317ba5bccd}\label{classScanToImageNode_ac1d9c8479606fd7d93e9bc317ba5bccd}} 
+\index{ScanToImageNode@{ScanToImageNode}!m\_edge\_map@{m\_edge\_map}}
+\index{m\_edge\_map@{m\_edge\_map}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{m\_edge\_map}{m\_edge\_map}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+To\+Image\+Node\+::m\+\_\+edge\+\_\+map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Edge map loaded from the file. 
+
+\mbox{\Hypertarget{classScanToImageNode_a3b55e15bc2c927b2ef3b96289949acb0}\label{classScanToImageNode_a3b55e15bc2c927b2ef3b96289949acb0}} 
+\index{ScanToImageNode@{ScanToImageNode}!relative\_orientaion\_@{relative\_orientaion\_}}
+\index{relative\_orientaion\_@{relative\_orientaion\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{relative\_orientaion\_}{relative\_orientaion\_}}
+{\footnotesize\ttfamily double Scan\+To\+Image\+Node\+::relative\+\_\+orientaion\+\_\+ = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Relative orientation of the robot. 
+
+\mbox{\Hypertarget{classScanToImageNode_ae11d3367d1793e2d4754b0e1fbdc3ec9}\label{classScanToImageNode_ae11d3367d1793e2d4754b0e1fbdc3ec9}} 
+\index{ScanToImageNode@{ScanToImageNode}!scan\_subscriber\_@{scan\_subscriber\_}}
+\index{scan\_subscriber\_@{scan\_subscriber\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{scan\_subscriber\_}{scan\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Scan\+To\+Image\+Node\+::scan\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subscriber for Laser\+Scan messages. 
+
+\mbox{\Hypertarget{classScanToImageNode_ac8b40d31254d3a81ac71eb534626fa09}\label{classScanToImageNode_ac8b40d31254d3a81ac71eb534626fa09}} 
+\index{ScanToImageNode@{ScanToImageNode}!second\_image\_@{second\_image\_}}
+\index{second\_image\_@{second\_image\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{second\_image\_}{second\_image\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+To\+Image\+Node\+::second\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Images captured from the laser scan. 
+
+\mbox{\Hypertarget{classScanToImageNode_aaaffec2ca4411ef9f882c578e893512f}\label{classScanToImageNode_aaaffec2ca4411ef9f882c578e893512f}} 
+\index{ScanToImageNode@{ScanToImageNode}!second\_image\_captured\_@{second\_image\_captured\_}}
+\index{second\_image\_captured\_@{second\_image\_captured\_}!ScanToImageNode@{ScanToImageNode}}
+\doxysubsubsection{\texorpdfstring{second\_image\_captured\_}{second\_image\_captured\_}}
+{\footnotesize\ttfamily bool Scan\+To\+Image\+Node\+::second\+\_\+image\+\_\+captured\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if the second image has been captured. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-lab5.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{lab5_8cpp}{lab5.\+cpp}}\end{DoxyCompactItemize}

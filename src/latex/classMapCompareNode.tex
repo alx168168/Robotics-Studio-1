@@ -26,14 +26,53 @@ Collaboration diagram for Map\+Compare\+Node\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classMapCompareNode_a3afc090a3b8d359213d1d7537bd2bc5a}\label{classMapCompareNode_a3afc090a3b8d359213d1d7537bd2bc5a}} 
 \mbox{\hyperlink{classMapCompareNode_a3afc090a3b8d359213d1d7537bd2bc5a}{Map\+Compare\+Node}} ()
 \begin{DoxyCompactList}\small\item\em Constructs the \mbox{\hyperlink{classMapCompareNode}{Map\+Compare\+Node}} and initiates the map overlay process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMapCompareNode_a118975ec06dfd07062024fa741a97de2}{overlay\+Maps}} (const std\+::string \&map1\+\_\+path, const std\+::string \&map2\+\_\+path)
+\begin{DoxyCompactList}\small\item\em Overlays two maps by aligning them and combining their visuals. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMapCompareNode_a3afc090a3b8d359213d1d7537bd2bc5a}\label{classMapCompareNode_a3afc090a3b8d359213d1d7537bd2bc5a}} 
+\index{MapCompareNode@{MapCompareNode}!MapCompareNode@{MapCompareNode}}
+\index{MapCompareNode@{MapCompareNode}!MapCompareNode@{MapCompareNode}}
+\doxysubsubsection{\texorpdfstring{MapCompareNode()}{MapCompareNode()}}
+{\footnotesize\ttfamily Map\+Compare\+Node\+::\+Map\+Compare\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs the \mbox{\hyperlink{classMapCompareNode}{Map\+Compare\+Node}} and initiates the map overlay process. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMapCompareNode_a118975ec06dfd07062024fa741a97de2}\label{classMapCompareNode_a118975ec06dfd07062024fa741a97de2}} 
+\index{MapCompareNode@{MapCompareNode}!overlayMaps@{overlayMaps}}
+\index{overlayMaps@{overlayMaps}!MapCompareNode@{MapCompareNode}}
+\doxysubsubsection{\texorpdfstring{overlayMaps()}{overlayMaps()}}
+{\footnotesize\ttfamily void Map\+Compare\+Node\+::overlay\+Maps (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{map1\+\_\+path,  }\item[{const std\+::string \&}]{map2\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Overlays two maps by aligning them and combining their visuals. 
+
+This function loads the two specified map images, resizes the second map to match the first, detects features in both maps, matches these features, and computes the homography transformation to align the second map with the first. It then creates an overlay image and saves it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map1\+\_\+path} & The file path to the first map image. \\
+\hline
+{\em map2\+\_\+path} & The file path to the second map image. \\
+\hline
+\end{DoxyParams}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-map\+\_\+compare.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{map__compare_8cpp}{map\+\_\+compare.\+cpp}}\end{DoxyCompactItemize}

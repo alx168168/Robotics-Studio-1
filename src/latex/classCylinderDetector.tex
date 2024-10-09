@@ -2,6 +2,11 @@
 \label{classCylinderDetector}\index{CylinderDetector@{CylinderDetector}}
 
 
+\mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}} class that handles detection of 30cm diameter cylinders from laser scan data and draws them on a occupancy grid map using Open\+CV for image processing. Needs to have a base map published to the topic \char`\"{}/map\char`\"{} to draw on and publishes the modified map to the topic \char`\"{}modified\+\_\+map\char`\"{}.  
+
+
+
+
 Inheritance diagram for Cylinder\+Detector\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -18,8 +23,352 @@ Collaboration diagram for Cylinder\+Detector\+:\nopagebreak
 \includegraphics[width=179pt]{classCylinderDetector__coll__graph}
 \end{center}
 \end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCylinderDetector_ab9c25e0bf46af5299a014ff6e461e972}{Cylinder\+Detector}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCylinderDetector_ac4fe9e4e044f3cca2a0ebf5cff847941}{get\+Transform}} ()
+\begin{DoxyCompactList}\small\item\em Gets the transform from base\+\_\+scan to map frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_a885ac7202b59c807423b81d0704567f8}{map\+Callback}} (const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr msg)
+\begin{DoxyCompactList}\small\item\em Callback function for the Occupancy Grid Map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_ad9e65682eec7acca088cc101cb77987b}{draw\+Circle}} (std\+::vector$<$ int8\+\_\+t $>$ \&data, int width, int center\+\_\+x, int center\+\_\+y, int radius)
+\begin{DoxyCompactList}\small\item\em Draws a circle on the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_a032e436c1d25d221ddc4932d95f420bf}{set\+Circle\+Points}} (std\+::vector$<$ int8\+\_\+t $>$ \&data, int width, int center\+\_\+x, int center\+\_\+y, int x, int y)
+\begin{DoxyCompactList}\small\item\em Marks the points of a circle on the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_a9436b075fb859638bbbb903cfc1afb92}{scan\+Callback}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr scan\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Callback function for Laser\+Scan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_abc5e8d2282f3f919b9d89fdcdd1e6b31}{convert\+Image\+To\+Coordinates}} (int img\+\_\+x, int img\+\_\+y, double max\+\_\+range, int image\+\_\+size, double \&real\+\_\+x, double \&real\+\_\+y)
+\begin{DoxyCompactList}\small\item\em Converts image coordinates to real-\/world coordinates. \end{DoxyCompactList}\item 
+geometry\+\_\+msgs\+::msg\+::\+Point \mbox{\hyperlink{classCylinderDetector_ae21f78fbac4a4fcf39196aafb8546f08}{transform\+To\+Global\+Frame}} (double x\+\_\+local, double y\+\_\+local, const geometry\+\_\+msgs\+::msg\+::\+Transform \&transform)
+\begin{DoxyCompactList}\small\item\em Transforms a point from the robot frame to the global frame. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCylinderDetector_aeb890559768c7fabae668c2a01c74284}{quaternion\+To\+Yaw}} (const geometry\+\_\+msgs\+::msg\+::\+Quaternion \&q)
+\begin{DoxyCompactList}\small\item\em Converts quaternion to yaw (theta). \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classCylinderDetector_a720de31dabdda4f2c4fba65baae28164}{laser\+Scan\+To\+Image}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr scan\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Converts the laser scan data into a 2D image. \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Vec3f $>$ \mbox{\hyperlink{classCylinderDetector_abcd0f2c2991ff0c4d577382d95f783f5}{detect\+Circles\+In\+Image}} (const cv\+::\+Mat \&image)
+\begin{DoxyCompactList}\small\item\em Detects circles in the image using Hough Circle Transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_a01fd1f11f7b3862abdd2b22a9eed9c3a}{display\+Image}} (const cv\+::\+Mat \&image)
+\begin{DoxyCompactList}\small\item\em Displays the image with detected circles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCylinderDetector_ac348b6a9a345a17d81fb378af61854d1}{draw\+Circle\+On\+Map}} (double x\+\_\+world, double y\+\_\+world, double radius)
+\begin{DoxyCompactList}\small\item\em Draws a circle on the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classCylinderDetector_af41d2e6a8276b40ef52f8ad5a491d10d}{laser\+\_\+scan\+\_\+subscriber\+\_\+}}
+\item 
+rclcpp\+::\+Subscription$<$ nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid $>$\+::Shared\+Ptr \mbox{\hyperlink{classCylinderDetector_a4b186a7749cb7a5f8dddc76869808d47}{map\+\_\+subscription\+\_\+}}
+\item 
+rclcpp\+::\+Publisher$<$ nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid $>$\+::Shared\+Ptr \mbox{\hyperlink{classCylinderDetector_a7488470c8d0575a3b9f26dd6252c844b}{map\+\_\+publisher\+\_\+}}
+\item 
+rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr \mbox{\hyperlink{classCylinderDetector_a63e7fc59239e79f47c491f2cc13bfdaa}{timer\+\_\+}}
+\item 
+tf2\+\_\+ros\+::\+Buffer \mbox{\hyperlink{classCylinderDetector_a1ca2c7ff3a43ead7259588c5a6c7bcd6}{tf\+\_\+buffer\+\_\+}}
+\item 
+tf2\+\_\+ros\+::\+Transform\+Listener \mbox{\hyperlink{classCylinderDetector_adfd458e868243157ffcc4408d3b00956}{tf\+\_\+listener\+\_\+}}
+\item 
+geometry\+\_\+msgs\+::msg\+::\+Transform\+Stamped \mbox{\hyperlink{classCylinderDetector_a3c2053d357a92d7df5447ea93ab56e4e}{transform\+\_\+stamped\+\_\+}}
+\item 
+nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid \mbox{\hyperlink{classCylinderDetector_aa39ab5d5db699c284487e80fbb54a114}{modified\+\_\+map\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}} class that handles detection of 30cm diameter cylinders from laser scan data and draws them on a occupancy grid map using Open\+CV for image processing. Needs to have a base map published to the topic \char`\"{}/map\char`\"{} to draw on and publishes the modified map to the topic \char`\"{}modified\+\_\+map\char`\"{}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCylinderDetector_ab9c25e0bf46af5299a014ff6e461e972}\label{classCylinderDetector_ab9c25e0bf46af5299a014ff6e461e972}} 
+\index{CylinderDetector@{CylinderDetector}!CylinderDetector@{CylinderDetector}}
+\index{CylinderDetector@{CylinderDetector}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{CylinderDetector()}{CylinderDetector()}}
+{\footnotesize\ttfamily Cylinder\+Detector\+::\+Cylinder\+Detector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}}. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCylinderDetector_abc5e8d2282f3f919b9d89fdcdd1e6b31}\label{classCylinderDetector_abc5e8d2282f3f919b9d89fdcdd1e6b31}} 
+\index{CylinderDetector@{CylinderDetector}!convertImageToCoordinates@{convertImageToCoordinates}}
+\index{convertImageToCoordinates@{convertImageToCoordinates}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{convertImageToCoordinates()}{convertImageToCoordinates()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::convert\+Image\+To\+Coordinates (\begin{DoxyParamCaption}\item[{int}]{img\+\_\+x,  }\item[{int}]{img\+\_\+y,  }\item[{double}]{max\+\_\+range,  }\item[{int}]{image\+\_\+size,  }\item[{double \&}]{real\+\_\+x,  }\item[{double \&}]{real\+\_\+y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts image coordinates to real-\/world coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img\+\_\+x} & Image X coordinate. \\
+\hline
+{\em img\+\_\+y} & Image Y coordinate. \\
+\hline
+{\em max\+\_\+range} & Maximum range of the laser scan. \\
+\hline
+{\em image\+\_\+size} & Image size in pixels. \\
+\hline
+{\em real\+\_\+x} & Real-\/world X coordinate (output). \\
+\hline
+{\em real\+\_\+y} & Real-\/world Y coordinate (output). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_abcd0f2c2991ff0c4d577382d95f783f5}\label{classCylinderDetector_abcd0f2c2991ff0c4d577382d95f783f5}} 
+\index{CylinderDetector@{CylinderDetector}!detectCirclesInImage@{detectCirclesInImage}}
+\index{detectCirclesInImage@{detectCirclesInImage}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{detectCirclesInImage()}{detectCirclesInImage()}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Vec3f$>$ Cylinder\+Detector\+::detect\+Circles\+In\+Image (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Detects circles in the image using Hough Circle Transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Input image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of detected circles. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCylinderDetector_a01fd1f11f7b3862abdd2b22a9eed9c3a}\label{classCylinderDetector_a01fd1f11f7b3862abdd2b22a9eed9c3a}} 
+\index{CylinderDetector@{CylinderDetector}!displayImage@{displayImage}}
+\index{displayImage@{displayImage}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{displayImage()}{displayImage()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::display\+Image (\begin{DoxyParamCaption}\item[{const cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Displays the image with detected circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Image to be displayed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_ad9e65682eec7acca088cc101cb77987b}\label{classCylinderDetector_ad9e65682eec7acca088cc101cb77987b}} 
+\index{CylinderDetector@{CylinderDetector}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::draw\+Circle (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int8\+\_\+t $>$ \&}]{data,  }\item[{int}]{width,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Draws a circle on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Map data array. \\
+\hline
+{\em width} & Map width in cells. \\
+\hline
+{\em center\+\_\+x} & Center X of the circle. \\
+\hline
+{\em center\+\_\+y} & Center Y of the circle. \\
+\hline
+{\em radius} & Radius of the circle in cells. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_ac348b6a9a345a17d81fb378af61854d1}\label{classCylinderDetector_ac348b6a9a345a17d81fb378af61854d1}} 
+\index{CylinderDetector@{CylinderDetector}!drawCircleOnMap@{drawCircleOnMap}}
+\index{drawCircleOnMap@{drawCircleOnMap}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{drawCircleOnMap()}{drawCircleOnMap()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::draw\+Circle\+On\+Map (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+world,  }\item[{double}]{y\+\_\+world,  }\item[{double}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Draws a circle on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+world} & World X coordinate. \\
+\hline
+{\em y\+\_\+world} & World Y coordinate. \\
+\hline
+{\em radius} & Radius of the circle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_ac4fe9e4e044f3cca2a0ebf5cff847941}\label{classCylinderDetector_ac4fe9e4e044f3cca2a0ebf5cff847941}} 
+\index{CylinderDetector@{CylinderDetector}!getTransform@{getTransform}}
+\index{getTransform@{getTransform}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{getTransform()}{getTransform()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::get\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Gets the transform from base\+\_\+scan to map frame. 
+
+\mbox{\Hypertarget{classCylinderDetector_a720de31dabdda4f2c4fba65baae28164}\label{classCylinderDetector_a720de31dabdda4f2c4fba65baae28164}} 
+\index{CylinderDetector@{CylinderDetector}!laserScanToImage@{laserScanToImage}}
+\index{laserScanToImage@{laserScanToImage}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{laserScanToImage()}{laserScanToImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Cylinder\+Detector\+::laser\+Scan\+To\+Image (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr}]{scan\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts the laser scan data into a 2D image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan\+\_\+msg} & Laser\+Scan message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image created from the laser scan. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCylinderDetector_a885ac7202b59c807423b81d0704567f8}\label{classCylinderDetector_a885ac7202b59c807423b81d0704567f8}} 
+\index{CylinderDetector@{CylinderDetector}!mapCallback@{mapCallback}}
+\index{mapCallback@{mapCallback}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{mapCallback()}{mapCallback()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::map\+Callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function for the Occupancy Grid Map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Occupancy Grid message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_aeb890559768c7fabae668c2a01c74284}\label{classCylinderDetector_aeb890559768c7fabae668c2a01c74284}} 
+\index{CylinderDetector@{CylinderDetector}!quaternionToYaw@{quaternionToYaw}}
+\index{quaternionToYaw@{quaternionToYaw}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{quaternionToYaw()}{quaternionToYaw()}}
+{\footnotesize\ttfamily double Cylinder\+Detector\+::quaternion\+To\+Yaw (\begin{DoxyParamCaption}\item[{const geometry\+\_\+msgs\+::msg\+::\+Quaternion \&}]{q }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts quaternion to yaw (theta). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & Quaternion representing orientation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Yaw angle (theta) in radians. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCylinderDetector_a9436b075fb859638bbbb903cfc1afb92}\label{classCylinderDetector_a9436b075fb859638bbbb903cfc1afb92}} 
+\index{CylinderDetector@{CylinderDetector}!scanCallback@{scanCallback}}
+\index{scanCallback@{scanCallback}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{scanCallback()}{scanCallback()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::scan\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr}]{scan\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function for Laser\+Scan. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan\+\_\+msg} & Laser\+Scan message. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_a032e436c1d25d221ddc4932d95f420bf}\label{classCylinderDetector_a032e436c1d25d221ddc4932d95f420bf}} 
+\index{CylinderDetector@{CylinderDetector}!setCirclePoints@{setCirclePoints}}
+\index{setCirclePoints@{setCirclePoints}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{setCirclePoints()}{setCirclePoints()}}
+{\footnotesize\ttfamily void Cylinder\+Detector\+::set\+Circle\+Points (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int8\+\_\+t $>$ \&}]{data,  }\item[{int}]{width,  }\item[{int}]{center\+\_\+x,  }\item[{int}]{center\+\_\+y,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Marks the points of a circle on the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Map data array. \\
+\hline
+{\em width} & Map width in cells. \\
+\hline
+{\em center\+\_\+x} & Center X of the circle. \\
+\hline
+{\em center\+\_\+y} & Center Y of the circle. \\
+\hline
+{\em x} & X offset for the point. \\
+\hline
+{\em y} & Y offset for the point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCylinderDetector_ae21f78fbac4a4fcf39196aafb8546f08}\label{classCylinderDetector_ae21f78fbac4a4fcf39196aafb8546f08}} 
+\index{CylinderDetector@{CylinderDetector}!transformToGlobalFrame@{transformToGlobalFrame}}
+\index{transformToGlobalFrame@{transformToGlobalFrame}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{transformToGlobalFrame()}{transformToGlobalFrame()}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::msg\+::\+Point Cylinder\+Detector\+::transform\+To\+Global\+Frame (\begin{DoxyParamCaption}\item[{double}]{x\+\_\+local,  }\item[{double}]{y\+\_\+local,  }\item[{const geometry\+\_\+msgs\+::msg\+::\+Transform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Transforms a point from the robot frame to the global frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+local} & X coordinate in robot\textquotesingle{}s frame. \\
+\hline
+{\em y\+\_\+local} & Y coordinate in robot\textquotesingle{}s frame. \\
+\hline
+{\em transform} & Transform from the robot frame to the map frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed point in the global frame. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCylinderDetector_af41d2e6a8276b40ef52f8ad5a491d10d}\label{classCylinderDetector_af41d2e6a8276b40ef52f8ad5a491d10d}} 
+\index{CylinderDetector@{CylinderDetector}!laser\_scan\_subscriber\_@{laser\_scan\_subscriber\_}}
+\index{laser\_scan\_subscriber\_@{laser\_scan\_subscriber\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{laser\_scan\_subscriber\_}{laser\_scan\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Cylinder\+Detector\+::laser\+\_\+scan\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_a7488470c8d0575a3b9f26dd6252c844b}\label{classCylinderDetector_a7488470c8d0575a3b9f26dd6252c844b}} 
+\index{CylinderDetector@{CylinderDetector}!map\_publisher\_@{map\_publisher\_}}
+\index{map\_publisher\_@{map\_publisher\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{map\_publisher\_}{map\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid$>$\+::Shared\+Ptr Cylinder\+Detector\+::map\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_a4b186a7749cb7a5f8dddc76869808d47}\label{classCylinderDetector_a4b186a7749cb7a5f8dddc76869808d47}} 
+\index{CylinderDetector@{CylinderDetector}!map\_subscription\_@{map\_subscription\_}}
+\index{map\_subscription\_@{map\_subscription\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{map\_subscription\_}{map\_subscription\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid$>$\+::Shared\+Ptr Cylinder\+Detector\+::map\+\_\+subscription\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_aa39ab5d5db699c284487e80fbb54a114}\label{classCylinderDetector_aa39ab5d5db699c284487e80fbb54a114}} 
+\index{CylinderDetector@{CylinderDetector}!modified\_map\_@{modified\_map\_}}
+\index{modified\_map\_@{modified\_map\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{modified\_map\_}{modified\_map\_}}
+{\footnotesize\ttfamily nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid Cylinder\+Detector\+::modified\+\_\+map\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_a1ca2c7ff3a43ead7259588c5a6c7bcd6}\label{classCylinderDetector_a1ca2c7ff3a43ead7259588c5a6c7bcd6}} 
+\index{CylinderDetector@{CylinderDetector}!tf\_buffer\_@{tf\_buffer\_}}
+\index{tf\_buffer\_@{tf\_buffer\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{tf\_buffer\_}{tf\_buffer\_}}
+{\footnotesize\ttfamily tf2\+\_\+ros\+::\+Buffer Cylinder\+Detector\+::tf\+\_\+buffer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_adfd458e868243157ffcc4408d3b00956}\label{classCylinderDetector_adfd458e868243157ffcc4408d3b00956}} 
+\index{CylinderDetector@{CylinderDetector}!tf\_listener\_@{tf\_listener\_}}
+\index{tf\_listener\_@{tf\_listener\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{tf\_listener\_}{tf\_listener\_}}
+{\footnotesize\ttfamily tf2\+\_\+ros\+::\+Transform\+Listener Cylinder\+Detector\+::tf\+\_\+listener\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_a63e7fc59239e79f47c491f2cc13bfdaa}\label{classCylinderDetector_a63e7fc59239e79f47c491f2cc13bfdaa}} 
+\index{CylinderDetector@{CylinderDetector}!timer\_@{timer\_}}
+\index{timer\_@{timer\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{timer\_}{timer\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Timer\+Base\+::\+Shared\+Ptr Cylinder\+Detector\+::timer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCylinderDetector_a3c2053d357a92d7df5447ea93ab56e4e}\label{classCylinderDetector_a3c2053d357a92d7df5447ea93ab56e4e}} 
+\index{CylinderDetector@{CylinderDetector}!transform\_stamped\_@{transform\_stamped\_}}
+\index{transform\_stamped\_@{transform\_stamped\_}!CylinderDetector@{CylinderDetector}}
+\doxysubsubsection{\texorpdfstring{transform\_stamped\_}{transform\_stamped\_}}
+{\footnotesize\ttfamily geometry\+\_\+msgs\+::msg\+::\+Transform\+Stamped Cylinder\+Detector\+::transform\+\_\+stamped\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-cylinder\+\_\+detector.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{cylinder__detector_8cpp}{cylinder\+\_\+detector.\+cpp}}\end{DoxyCompactItemize}

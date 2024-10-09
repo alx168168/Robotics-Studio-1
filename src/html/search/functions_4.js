@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scanmatchinglocalizer_18',['ScanMatchingLocalizer',['../classScanMatchingLocalizer.html#a2311166d8e8c1327f0e2edb03d7814d9',1,'ScanMatchingLocalizer']]],
-  ['scantoimagenode_19',['ScanToImageNode',['../classScanToImageNode.html#a95316c7a60dab8c1ad9c78441c897feb',1,'ScanToImageNode']]]
+  ['image_5fcallback_123',['image_callback',['../classImageProcessor.html#a6e3d0f91bdf0d06d46a4d635778f1344',1,'ImageProcessor']]],
+  ['imageprocessor_124',['ImageProcessor',['../classImageProcessor.html#aa9201a4d14b20ac968919145db3a588b',1,'ImageProcessor']]]
 ];

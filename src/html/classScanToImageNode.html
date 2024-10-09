@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classScanToImageNode-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ScanToImageNode Class Reference</div>  </div>
@@ -92,16 +94,458 @@ Collaboration diagram for ScanToImageNode:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a95316c7a60dab8c1ad9c78441c897feb"><td class="memItemLeft" align="right" valign="top"><a id="a95316c7a60dab8c1ad9c78441c897feb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a95316c7a60dab8c1ad9c78441c897feb">ScanToImageNode</a> ()</td></tr>
-<tr class="memdesc:a95316c7a60dab8c1ad9c78441c897feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classScanToImageNode.html" title="Node that processes LaserScan messages and visualizes them as images.">ScanToImageNode</a> class. Initializes the node and sets up the publisher and subscriber. <br /></td></tr>
+<tr class="memitem:a95316c7a60dab8c1ad9c78441c897feb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a95316c7a60dab8c1ad9c78441c897feb">ScanToImageNode</a> ()</td></tr>
+<tr class="memdesc:a95316c7a60dab8c1ad9c78441c897feb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classScanToImageNode.html" title="Node that processes LaserScan messages and visualizes them as images.">ScanToImageNode</a> class. Initializes the node and sets up the publisher and subscriber.  <a href="classScanToImageNode.html#a95316c7a60dab8c1ad9c78441c897feb">More...</a><br /></td></tr>
 <tr class="separator:a95316c7a60dab8c1ad9c78441c897feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:abf50ea2264374d956181fb9a0bef0da6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#abf50ea2264374d956181fb9a0bef0da6">scanCallback</a> (const sensor_msgs::msg::LaserScan::SharedPtr msg)</td></tr>
+<tr class="memdesc:abf50ea2264374d956181fb9a0bef0da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function that gets triggered whenever a new LaserScan message is received.  <a href="classScanToImageNode.html#abf50ea2264374d956181fb9a0bef0da6">More...</a><br /></td></tr>
+<tr class="separator:abf50ea2264374d956181fb9a0bef0da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8872fcddf81ba73b21e2e51796b67d02"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a8872fcddf81ba73b21e2e51796b67d02">laserScanToMat</a> (const sensor_msgs::msg::LaserScan::SharedPtr &amp;scan)</td></tr>
+<tr class="memdesc:a8872fcddf81ba73b21e2e51796b67d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a LaserScan message into a binary image (cv::Mat).  <a href="classScanToImageNode.html#a8872fcddf81ba73b21e2e51796b67d02">More...</a><br /></td></tr>
+<tr class="separator:a8872fcddf81ba73b21e2e51796b67d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ed50184ea9a64521bdd4b5b6cdce6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a98ed50184ea9a64521bdd4b5b6cdce6f">calculateYawChange</a> ()</td></tr>
+<tr class="memdesc:a98ed50184ea9a64521bdd4b5b6cdce6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the change in orientation (yaw angle) of the robot by comparing two images.  <a href="classScanToImageNode.html#a98ed50184ea9a64521bdd4b5b6cdce6f">More...</a><br /></td></tr>
+<tr class="separator:a98ed50184ea9a64521bdd4b5b6cdce6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27aecec992270128e88f9c4c2b2cc5ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a27aecec992270128e88f9c4c2b2cc5ab">detectAndMatchFeatures</a> (const cv::Mat &amp;img1, const cv::Mat &amp;img2, std::vector&lt; cv::Point2f &gt; &amp;srcPoints, std::vector&lt; cv::Point2f &gt; &amp;dstPoints)</td></tr>
+<tr class="memdesc:a27aecec992270128e88f9c4c2b2cc5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects and matches features between two images.  <a href="classScanToImageNode.html#a27aecec992270128e88f9c4c2b2cc5ab">More...</a><br /></td></tr>
+<tr class="separator:a27aecec992270128e88f9c4c2b2cc5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae11d3367d1793e2d4754b0e1fbdc3ec9"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#ae11d3367d1793e2d4754b0e1fbdc3ec9">scan_subscriber_</a></td></tr>
+<tr class="memdesc:ae11d3367d1793e2d4754b0e1fbdc3ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscriber for LaserScan messages.  <a href="classScanToImageNode.html#ae11d3367d1793e2d4754b0e1fbdc3ec9">More...</a><br /></td></tr>
+<tr class="separator:ae11d3367d1793e2d4754b0e1fbdc3ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3be01f293c10f9e49ac078b3cffc9f2"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; geometry_msgs::msg::Twist &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#ac3be01f293c10f9e49ac078b3cffc9f2">cmd_publisher_</a></td></tr>
+<tr class="memdesc:ac3be01f293c10f9e49ac078b3cffc9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher for velocity commands.  <a href="classScanToImageNode.html#ac3be01f293c10f9e49ac078b3cffc9f2">More...</a><br /></td></tr>
+<tr class="separator:ac3be01f293c10f9e49ac078b3cffc9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a736f6e3e2b584d3b861e4c24c3ce45c6"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a736f6e3e2b584d3b861e4c24c3ce45c6">first_image_</a></td></tr>
+<tr class="separator:a736f6e3e2b584d3b861e4c24c3ce45c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b40d31254d3a81ac71eb534626fa09"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#ac8b40d31254d3a81ac71eb534626fa09">second_image_</a></td></tr>
+<tr class="memdesc:ac8b40d31254d3a81ac71eb534626fa09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Images captured from the laser scan.  <a href="classScanToImageNode.html#ac8b40d31254d3a81ac71eb534626fa09">More...</a><br /></td></tr>
+<tr class="separator:ac8b40d31254d3a81ac71eb534626fa09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adeb4810333a03d0c50ba725aa4865e6a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#adeb4810333a03d0c50ba725aa4865e6a">first_image_captured_</a> = false</td></tr>
+<tr class="memdesc:adeb4810333a03d0c50ba725aa4865e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the first image has been captured.  <a href="classScanToImageNode.html#adeb4810333a03d0c50ba725aa4865e6a">More...</a><br /></td></tr>
+<tr class="separator:adeb4810333a03d0c50ba725aa4865e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaffec2ca4411ef9f882c578e893512f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#aaaffec2ca4411ef9f882c578e893512f">second_image_captured_</a> = false</td></tr>
+<tr class="memdesc:aaaffec2ca4411ef9f882c578e893512f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating if the second image has been captured.  <a href="classScanToImageNode.html#aaaffec2ca4411ef9f882c578e893512f">More...</a><br /></td></tr>
+<tr class="separator:aaaffec2ca4411ef9f882c578e893512f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83af0146933a4086dc414553fb72dd8b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a83af0146933a4086dc414553fb72dd8b">angle_difference_</a></td></tr>
+<tr class="memdesc:a83af0146933a4086dc414553fb72dd8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change in angle between images.  <a href="classScanToImageNode.html#a83af0146933a4086dc414553fb72dd8b">More...</a><br /></td></tr>
+<tr class="separator:a83af0146933a4086dc414553fb72dd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b55e15bc2c927b2ef3b96289949acb0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#a3b55e15bc2c927b2ef3b96289949acb0">relative_orientaion_</a> = 0.0</td></tr>
+<tr class="memdesc:a3b55e15bc2c927b2ef3b96289949acb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Relative orientation of the robot.  <a href="classScanToImageNode.html#a3b55e15bc2c927b2ef3b96289949acb0">More...</a><br /></td></tr>
+<tr class="separator:a3b55e15bc2c927b2ef3b96289949acb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d9c8479606fd7d93e9bc317ba5bccd"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanToImageNode.html#ac1d9c8479606fd7d93e9bc317ba5bccd">m_edge_map</a></td></tr>
+<tr class="memdesc:ac1d9c8479606fd7d93e9bc317ba5bccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edge map loaded from the file.  <a href="classScanToImageNode.html#ac1d9c8479606fd7d93e9bc317ba5bccd">More...</a><br /></td></tr>
+<tr class="separator:ac1d9c8479606fd7d93e9bc317ba5bccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Node that processes LaserScan messages and visualizes them as images. </p>
 <p>The <a class="el" href="classScanToImageNode.html" title="Node that processes LaserScan messages and visualizes them as images.">ScanToImageNode</a> subscribes to LaserScan messages, converts them into images, and calculates the change in the robot's yaw orientation based on the captured images. It maintains two images: the most recent and the one before that, allowing for relative orientation estimation. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>lab5.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a95316c7a60dab8c1ad9c78441c897feb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95316c7a60dab8c1ad9c78441c897feb">&#9670;&nbsp;</a></span>ScanToImageNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ScanToImageNode::ScanToImageNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classScanToImageNode.html" title="Node that processes LaserScan messages and visualizes them as images.">ScanToImageNode</a> class. Initializes the node and sets up the publisher and subscriber. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a98ed50184ea9a64521bdd4b5b6cdce6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ed50184ea9a64521bdd4b5b6cdce6f">&#9670;&nbsp;</a></span>calculateYawChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanToImageNode::calculateYawChange </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estimates the change in orientation (yaw angle) of the robot by comparing two images. </p>
+
+</div>
+</div>
+<a id="a27aecec992270128e88f9c4c2b2cc5ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27aecec992270128e88f9c4c2b2cc5ab">&#9670;&nbsp;</a></span>detectAndMatchFeatures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanToImageNode::detectAndMatchFeatures </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>img2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Point2f &gt; &amp;&#160;</td>
+          <td class="paramname"><em>srcPoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; cv::Point2f &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dstPoints</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detects and matches features between two images. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img1</td><td>First image. </td></tr>
+    <tr><td class="paramname">img2</td><td>Second image. </td></tr>
+    <tr><td class="paramname">srcPoints</td><td>Output vector of points from the first image. </td></tr>
+    <tr><td class="paramname">dstPoints</td><td>Output vector of points from the second image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8872fcddf81ba73b21e2e51796b67d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8872fcddf81ba73b21e2e51796b67d02">&#9670;&nbsp;</a></span>laserScanToMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanToImageNode::laserScanToMat </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr &amp;&#160;</td>
+          <td class="paramname"><em>scan</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a LaserScan message into a binary image (cv::Mat). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scan</td><td>Shared pointer to the LaserScan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cv::Mat The resulting binary image. </dd></dl>
+
+</div>
+</div>
+<a id="abf50ea2264374d956181fb9a0bef0da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf50ea2264374d956181fb9a0bef0da6">&#9670;&nbsp;</a></span>scanCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanToImageNode::scanCallback </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function that gets triggered whenever a new LaserScan message is received. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Shared pointer to the received LaserScan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a83af0146933a4086dc414553fb72dd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83af0146933a4086dc414553fb72dd8b">&#9670;&nbsp;</a></span>angle_difference_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanToImageNode::angle_difference_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Change in angle between images. </p>
+
+</div>
+</div>
+<a id="ac3be01f293c10f9e49ac078b3cffc9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3be01f293c10f9e49ac078b3cffc9f2">&#9670;&nbsp;</a></span>cmd_publisher_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;geometry_msgs::msg::Twist&gt;::SharedPtr ScanToImageNode::cmd_publisher_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher for velocity commands. </p>
+
+</div>
+</div>
+<a id="a736f6e3e2b584d3b861e4c24c3ce45c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a736f6e3e2b584d3b861e4c24c3ce45c6">&#9670;&nbsp;</a></span>first_image_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanToImageNode::first_image_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adeb4810333a03d0c50ba725aa4865e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adeb4810333a03d0c50ba725aa4865e6a">&#9670;&nbsp;</a></span>first_image_captured_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScanToImageNode::first_image_captured_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag indicating if the first image has been captured. </p>
+
+</div>
+</div>
+<a id="ac1d9c8479606fd7d93e9bc317ba5bccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d9c8479606fd7d93e9bc317ba5bccd">&#9670;&nbsp;</a></span>m_edge_map</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanToImageNode::m_edge_map</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edge map loaded from the file. </p>
+
+</div>
+</div>
+<a id="a3b55e15bc2c927b2ef3b96289949acb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b55e15bc2c927b2ef3b96289949acb0">&#9670;&nbsp;</a></span>relative_orientaion_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanToImageNode::relative_orientaion_ = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Relative orientation of the robot. </p>
+
+</div>
+</div>
+<a id="ae11d3367d1793e2d4754b0e1fbdc3ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11d3367d1793e2d4754b0e1fbdc3ec9">&#9670;&nbsp;</a></span>scan_subscriber_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr ScanToImageNode::scan_subscriber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscriber for LaserScan messages. </p>
+
+</div>
+</div>
+<a id="ac8b40d31254d3a81ac71eb534626fa09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8b40d31254d3a81ac71eb534626fa09">&#9670;&nbsp;</a></span>second_image_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanToImageNode::second_image_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Images captured from the laser scan. </p>
+
+</div>
+</div>
+<a id="aaaffec2ca4411ef9f882c578e893512f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaffec2ca4411ef9f882c578e893512f">&#9670;&nbsp;</a></span>second_image_captured_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScanToImageNode::second_image_captured_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag indicating if the second image has been captured. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="lab5_8cpp.html">lab5.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

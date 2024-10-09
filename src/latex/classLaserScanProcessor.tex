@@ -26,14 +26,103 @@ Collaboration diagram for Laser\+Scan\+Processor\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classLaserScanProcessor_aad77abe90ca5455f273cdd3be2d80d9c}\label{classLaserScanProcessor_aad77abe90ca5455f273cdd3be2d80d9c}} 
 \mbox{\hyperlink{classLaserScanProcessor_aad77abe90ca5455f273cdd3be2d80d9c}{Laser\+Scan\+Processor}} ()
 \begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classLaserScanProcessor}{Laser\+Scan\+Processor}} node. This initializes the node, subscribes to the {\ttfamily /scan} topic, and creates publishers for laser scan subsets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLaserScanProcessor_ae7968adc56400be1d6dc59e257c59736}{scan\+Callback}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr scan)
+\begin{DoxyCompactList}\small\item\em Callback function that processes Laser\+Scan messages and publishes subsets of the scan data. This function extracts two angular ranges and publishes the corresponding laser scan data. It also samples every nth point from the laser scan and publishes the subset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classLaserScanProcessor_ae20ffb5eb163850574d79e417d970a32}{scan\+\_\+sub\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Subscription object for receiving Laser\+Scan messages. This subscribes to the {\ttfamily /scan} topic. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classLaserScanProcessor_ae148b04a960c747ff0f684f319a62972}{scan\+\_\+pub\+\_\+1\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher object for publishing the first subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+1} topic. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classLaserScanProcessor_a51a1d58f7d528f9e1fc1b306d9456117}{scan\+\_\+pub\+\_\+2\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher object for publishing the second subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+2} topic. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classLaserScanProcessor_aa79ab674a50f39d1f630ea3d754a2605}{scan\+\_\+pub\+\_\+nth\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher object for publishing the nth-\/point subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+nth} topic. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A ROS 2 node that processes Laser\+Scan messages, extracts subsets, and publishes them on different topics. 
 
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLaserScanProcessor_aad77abe90ca5455f273cdd3be2d80d9c}\label{classLaserScanProcessor_aad77abe90ca5455f273cdd3be2d80d9c}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!LaserScanProcessor@{LaserScanProcessor}}
+\index{LaserScanProcessor@{LaserScanProcessor}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{LaserScanProcessor()}{LaserScanProcessor()}}
+{\footnotesize\ttfamily Laser\+Scan\+Processor\+::\+Laser\+Scan\+Processor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classLaserScanProcessor}{Laser\+Scan\+Processor}} node. This initializes the node, subscribes to the {\ttfamily /scan} topic, and creates publishers for laser scan subsets. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLaserScanProcessor_ae7968adc56400be1d6dc59e257c59736}\label{classLaserScanProcessor_ae7968adc56400be1d6dc59e257c59736}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!scanCallback@{scanCallback}}
+\index{scanCallback@{scanCallback}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{scanCallback()}{scanCallback()}}
+{\footnotesize\ttfamily void Laser\+Scan\+Processor\+::scan\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr}]{scan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function that processes Laser\+Scan messages and publishes subsets of the scan data. This function extracts two angular ranges and publishes the corresponding laser scan data. It also samples every nth point from the laser scan and publishes the subset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan} & The received Laser\+Scan message. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classLaserScanProcessor_ae148b04a960c747ff0f684f319a62972}\label{classLaserScanProcessor_ae148b04a960c747ff0f684f319a62972}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!scan\_pub\_1\_@{scan\_pub\_1\_}}
+\index{scan\_pub\_1\_@{scan\_pub\_1\_}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{scan\_pub\_1\_}{scan\_pub\_1\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Laser\+Scan\+Processor\+::scan\+\_\+pub\+\_\+1\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher object for publishing the first subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+1} topic. 
+
+\mbox{\Hypertarget{classLaserScanProcessor_a51a1d58f7d528f9e1fc1b306d9456117}\label{classLaserScanProcessor_a51a1d58f7d528f9e1fc1b306d9456117}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!scan\_pub\_2\_@{scan\_pub\_2\_}}
+\index{scan\_pub\_2\_@{scan\_pub\_2\_}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{scan\_pub\_2\_}{scan\_pub\_2\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Laser\+Scan\+Processor\+::scan\+\_\+pub\+\_\+2\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher object for publishing the second subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+2} topic. 
+
+\mbox{\Hypertarget{classLaserScanProcessor_aa79ab674a50f39d1f630ea3d754a2605}\label{classLaserScanProcessor_aa79ab674a50f39d1f630ea3d754a2605}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!scan\_pub\_nth\_@{scan\_pub\_nth\_}}
+\index{scan\_pub\_nth\_@{scan\_pub\_nth\_}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{scan\_pub\_nth\_}{scan\_pub\_nth\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Laser\+Scan\+Processor\+::scan\+\_\+pub\+\_\+nth\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher object for publishing the nth-\/point subset of laser scan data. This publishes data to the {\ttfamily /scan\+\_\+subset\+\_\+nth} topic. 
+
+\mbox{\Hypertarget{classLaserScanProcessor_ae20ffb5eb163850574d79e417d970a32}\label{classLaserScanProcessor_ae20ffb5eb163850574d79e417d970a32}} 
+\index{LaserScanProcessor@{LaserScanProcessor}!scan\_sub\_@{scan\_sub\_}}
+\index{scan\_sub\_@{scan\_sub\_}!LaserScanProcessor@{LaserScanProcessor}}
+\doxysubsubsection{\texorpdfstring{scan\_sub\_}{scan\_sub\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Laser\+Scan\+Processor\+::scan\+\_\+sub\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subscription object for receiving Laser\+Scan messages. This subscribes to the {\ttfamily /scan} topic. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-lab2.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{lab2_8cpp}{lab2.\+cpp}}\end{DoxyCompactItemize}

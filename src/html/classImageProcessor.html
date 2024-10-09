@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classImageProcessor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ImageProcessor Class Reference</div>  </div>
@@ -92,15 +94,141 @@ Collaboration diagram for ImageProcessor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa9201a4d14b20ac968919145db3a588b"><td class="memItemLeft" align="right" valign="top"><a id="aa9201a4d14b20ac968919145db3a588b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageProcessor.html#aa9201a4d14b20ac968919145db3a588b">ImageProcessor</a> ()</td></tr>
-<tr class="memdesc:aa9201a4d14b20ac968919145db3a588b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classImageProcessor.html" title="A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed im...">ImageProcessor</a> node. This initializes the node, subscribes to the <code>/camera/image_raw</code> topic, and creates a publisher to publish the processed images on the <code>processed_image</code> topic. <br /></td></tr>
+<tr class="memitem:aa9201a4d14b20ac968919145db3a588b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageProcessor.html#aa9201a4d14b20ac968919145db3a588b">ImageProcessor</a> ()</td></tr>
+<tr class="memdesc:aa9201a4d14b20ac968919145db3a588b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classImageProcessor.html" title="A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed im...">ImageProcessor</a> node. This initializes the node, subscribes to the <code>/camera/image_raw</code> topic, and creates a publisher to publish the processed images on the <code>processed_image</code> topic.  <a href="classImageProcessor.html#aa9201a4d14b20ac968919145db3a588b">More...</a><br /></td></tr>
 <tr class="separator:aa9201a4d14b20ac968919145db3a588b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6e3d0f91bdf0d06d46a4d635778f1344"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageProcessor.html#a6e3d0f91bdf0d06d46a4d635778f1344">image_callback</a> (const sensor_msgs::msg::Image::SharedPtr msg)</td></tr>
+<tr class="memdesc:a6e3d0f91bdf0d06d46a4d635778f1344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function that is triggered each time a new image is received. This function processes the image, adds a green circle at the center, and republishes it.  <a href="classImageProcessor.html#a6e3d0f91bdf0d06d46a4d635778f1344">More...</a><br /></td></tr>
+<tr class="separator:a6e3d0f91bdf0d06d46a4d635778f1344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad3a5f2b044695ea5925d9af0e5479627"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; sensor_msgs::msg::Image &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageProcessor.html#ad3a5f2b044695ea5925d9af0e5479627">subscription_</a></td></tr>
+<tr class="memdesc:ad3a5f2b044695ea5925d9af0e5479627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscription object for receiving image messages. This subscribes to the <code>/camera/image_raw</code> topic.  <a href="classImageProcessor.html#ad3a5f2b044695ea5925d9af0e5479627">More...</a><br /></td></tr>
+<tr class="separator:ad3a5f2b044695ea5925d9af0e5479627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81881aad449f3b8af53eebdb3a608184"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; sensor_msgs::msg::Image &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classImageProcessor.html#a81881aad449f3b8af53eebdb3a608184">publisher_</a></td></tr>
+<tr class="memdesc:a81881aad449f3b8af53eebdb3a608184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher object for sending processed image messages. This publishes processed images to the <code>processed_image</code> topic.  <a href="classImageProcessor.html#a81881aad449f3b8af53eebdb3a608184">More...</a><br /></td></tr>
+<tr class="separator:a81881aad449f3b8af53eebdb3a608184"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed image. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>lab1.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aa9201a4d14b20ac968919145db3a588b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9201a4d14b20ac968919145db3a588b">&#9670;&nbsp;</a></span>ImageProcessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImageProcessor::ImageProcessor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classImageProcessor.html" title="A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed im...">ImageProcessor</a> node. This initializes the node, subscribes to the <code>/camera/image_raw</code> topic, and creates a publisher to publish the processed images on the <code>processed_image</code> topic. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6e3d0f91bdf0d06d46a4d635778f1344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e3d0f91bdf0d06d46a4d635778f1344">&#9670;&nbsp;</a></span>image_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImageProcessor::image_callback </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::Image::SharedPtr&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function that is triggered each time a new image is received. This function processes the image, adds a green circle at the center, and republishes it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The received image message from the <code>/camera/image_raw</code> topic. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a81881aad449f3b8af53eebdb3a608184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81881aad449f3b8af53eebdb3a608184">&#9670;&nbsp;</a></span>publisher_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;sensor_msgs::msg::Image&gt;::SharedPtr ImageProcessor::publisher_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher object for sending processed image messages. This publishes processed images to the <code>processed_image</code> topic. </p>
+
+</div>
+</div>
+<a id="ad3a5f2b044695ea5925d9af0e5479627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a5f2b044695ea5925d9af0e5479627">&#9670;&nbsp;</a></span>subscription_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;sensor_msgs::msg::Image&gt;::SharedPtr ImageProcessor::subscription_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscription object for receiving image messages. This subscribes to the <code>/camera/image_raw</code> topic. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="lab1_8cpp.html">lab1.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

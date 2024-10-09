@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classDeadReckoningNode-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">DeadReckoningNode Class Reference</div>  </div>
@@ -92,16 +94,725 @@ Collaboration diagram for DeadReckoningNode:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac0237497c0d125f13a2b46725b199cb5"><td class="memItemLeft" align="right" valign="top"><a id="ac0237497c0d125f13a2b46725b199cb5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#ac0237497c0d125f13a2b46725b199cb5">DeadReckoningNode</a> ()</td></tr>
-<tr class="memdesc:ac0237497c0d125f13a2b46725b199cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDeadReckoningNode.html" title="A node that implements dead reckoning for a robot.">DeadReckoningNode</a>. <br /></td></tr>
+<tr class="memitem:ac0237497c0d125f13a2b46725b199cb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#ac0237497c0d125f13a2b46725b199cb5">DeadReckoningNode</a> ()</td></tr>
+<tr class="memdesc:ac0237497c0d125f13a2b46725b199cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classDeadReckoningNode.html" title="A node that implements dead reckoning for a robot.">DeadReckoningNode</a>.  <a href="classDeadReckoningNode.html#ac0237497c0d125f13a2b46725b199cb5">More...</a><br /></td></tr>
 <tr class="separator:ac0237497c0d125f13a2b46725b199cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adf1bd7b5939aa5ec34bf39c19b105dec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#adf1bd7b5939aa5ec34bf39c19b105dec">odom_callback</a> (const nav_msgs::msg::Odometry::SharedPtr msg)</td></tr>
+<tr class="memdesc:adf1bd7b5939aa5ec34bf39c19b105dec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for odometry messages.  <a href="classDeadReckoningNode.html#adf1bd7b5939aa5ec34bf39c19b105dec">More...</a><br /></td></tr>
+<tr class="separator:adf1bd7b5939aa5ec34bf39c19b105dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a437dd7e3beefa28ea12f2a77acf4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a59a437dd7e3beefa28ea12f2a77acf4a">timer_callback</a> ()</td></tr>
+<tr class="memdesc:a59a437dd7e3beefa28ea12f2a77acf4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer callback for updating the robot's pose and publishing commands.  <a href="classDeadReckoningNode.html#a59a437dd7e3beefa28ea12f2a77acf4a">More...</a><br /></td></tr>
+<tr class="separator:a59a437dd7e3beefa28ea12f2a77acf4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359f6cc80b8aec27ed3251ce8f6864c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a359f6cc80b8aec27ed3251ce8f6864c4">publish_noisy_odometry</a> (const rclcpp::Time &amp;current_time)</td></tr>
+<tr class="memdesc:a359f6cc80b8aec27ed3251ce8f6864c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes noisy odometry data.  <a href="classDeadReckoningNode.html#a359f6cc80b8aec27ed3251ce8f6864c4">More...</a><br /></td></tr>
+<tr class="separator:a359f6cc80b8aec27ed3251ce8f6864c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a48cdc0fc693bc34fcb831a690ea8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a28a48cdc0fc693bc34fcb831a690ea8f">publish_cmd_vel</a> ()</td></tr>
+<tr class="memdesc:a28a48cdc0fc693bc34fcb831a690ea8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publishes the velocity command based on the robot's direction.  <a href="classDeadReckoningNode.html#a28a48cdc0fc693bc34fcb831a690ea8f">More...</a><br /></td></tr>
+<tr class="separator:a28a48cdc0fc693bc34fcb831a690ea8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764dec275e5788578198e2e30bdc0069"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a764dec275e5788578198e2e30bdc0069">normalize_angle</a> (double angle)</td></tr>
+<tr class="memdesc:a764dec275e5788578198e2e30bdc0069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the angle to the range [0, 360).  <a href="classDeadReckoningNode.html#a764dec275e5788578198e2e30bdc0069">More...</a><br /></td></tr>
+<tr class="separator:a764dec275e5788578198e2e30bdc0069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a2f8f7625551f18b53c3be1598093bb3e"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; geometry_msgs::msg::Twist &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a2f8f7625551f18b53c3be1598093bb3e">cmd_vel_pub_</a></td></tr>
+<tr class="memdesc:a2f8f7625551f18b53c3be1598093bb3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">velocity command publisher  <a href="classDeadReckoningNode.html#a2f8f7625551f18b53c3be1598093bb3e">More...</a><br /></td></tr>
+<tr class="separator:a2f8f7625551f18b53c3be1598093bb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6a31b9662ae947ab28f64bb6b5fd1e"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; nav_msgs::msg::Odometry &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a8a6a31b9662ae947ab28f64bb6b5fd1e">odom_noisy_pub_</a></td></tr>
+<tr class="memdesc:a8a6a31b9662ae947ab28f64bb6b5fd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">noisy odometry publisher  <a href="classDeadReckoningNode.html#a8a6a31b9662ae947ab28f64bb6b5fd1e">More...</a><br /></td></tr>
+<tr class="separator:a8a6a31b9662ae947ab28f64bb6b5fd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ad03aa01dc0c4b56e6bd084af6b8c5"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; nav_msgs::msg::Odometry &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a72ad03aa01dc0c4b56e6bd084af6b8c5">odom_sub_</a></td></tr>
+<tr class="memdesc:a72ad03aa01dc0c4b56e6bd084af6b8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">odometry subscriber  <a href="classDeadReckoningNode.html#a72ad03aa01dc0c4b56e6bd084af6b8c5">More...</a><br /></td></tr>
+<tr class="separator:a72ad03aa01dc0c4b56e6bd084af6b8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c95fc3e3ad81efa3da41ccd9f3d5f3b"><td class="memItemLeft" align="right" valign="top">rclcpp::TimerBase::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a8c95fc3e3ad81efa3da41ccd9f3d5f3b">timer_</a></td></tr>
+<tr class="memdesc:a8c95fc3e3ad81efa3da41ccd9f3d5f3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">timer for periodic updates  <a href="classDeadReckoningNode.html#a8c95fc3e3ad81efa3da41ccd9f3d5f3b">More...</a><br /></td></tr>
+<tr class="separator:a8c95fc3e3ad81efa3da41ccd9f3d5f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e2d501fcff12e6e584a110b00217b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a68e2d501fcff12e6e584a110b00217b5">linear_speed_</a></td></tr>
+<tr class="memdesc:a68e2d501fcff12e6e584a110b00217b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">linear speed  <a href="classDeadReckoningNode.html#a68e2d501fcff12e6e584a110b00217b5">More...</a><br /></td></tr>
+<tr class="separator:a68e2d501fcff12e6e584a110b00217b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ee1e874f480325dd49c789db3263d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a84ee1e874f480325dd49c789db3263d7">angular_speed_</a></td></tr>
+<tr class="memdesc:a84ee1e874f480325dd49c789db3263d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">angular speed  <a href="classDeadReckoningNode.html#a84ee1e874f480325dd49c789db3263d7">More...</a><br /></td></tr>
+<tr class="separator:a84ee1e874f480325dd49c789db3263d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbf071c6ac5aee7cb33259bbd48a78f7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#acbf071c6ac5aee7cb33259bbd48a78f7">distance_</a></td></tr>
+<tr class="memdesc:acbf071c6ac5aee7cb33259bbd48a78f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">distance to travel  <a href="classDeadReckoningNode.html#acbf071c6ac5aee7cb33259bbd48a78f7">More...</a><br /></td></tr>
+<tr class="separator:acbf071c6ac5aee7cb33259bbd48a78f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea5fa3de31128be30876cba461ccea5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a3ea5fa3de31128be30876cba461ccea5">direction_</a></td></tr>
+<tr class="memdesc:a3ea5fa3de31128be30876cba461ccea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">movement direction  <a href="classDeadReckoningNode.html#a3ea5fa3de31128be30876cba461ccea5">More...</a><br /></td></tr>
+<tr class="separator:a3ea5fa3de31128be30876cba461ccea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14a3e653ffbf1bf704dd2173f006c48a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a14a3e653ffbf1bf704dd2173f006c48a">initialized_</a></td></tr>
+<tr class="memdesc:a14a3e653ffbf1bf704dd2173f006c48a"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialization flag  <a href="classDeadReckoningNode.html#a14a3e653ffbf1bf704dd2173f006c48a">More...</a><br /></td></tr>
+<tr class="separator:a14a3e653ffbf1bf704dd2173f006c48a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f2f8073c72228dbc311a26cf9f4ebc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a24f2f8073c72228dbc311a26cf9f4ebc">initial_pose_x_</a></td></tr>
+<tr class="separator:a24f2f8073c72228dbc311a26cf9f4ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f92ef9bd77fff17a1282bc02cfd2993"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a6f92ef9bd77fff17a1282bc02cfd2993">initial_pose_y_</a></td></tr>
+<tr class="separator:a6f92ef9bd77fff17a1282bc02cfd2993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5791b6e85b7a49d6228b833cbc21a8bb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a5791b6e85b7a49d6228b833cbc21a8bb">initial_pose_theta_</a></td></tr>
+<tr class="memdesc:a5791b6e85b7a49d6228b833cbc21a8bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">initial pose variables  <a href="classDeadReckoningNode.html#a5791b6e85b7a49d6228b833cbc21a8bb">More...</a><br /></td></tr>
+<tr class="separator:a5791b6e85b7a49d6228b833cbc21a8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae222453536b72b6e1fd10aadbf4581aa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#ae222453536b72b6e1fd10aadbf4581aa">current_pose_x_</a></td></tr>
+<tr class="separator:ae222453536b72b6e1fd10aadbf4581aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cec517105088c2a436f5e1aa5442379"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a7cec517105088c2a436f5e1aa5442379">current_pose_y_</a></td></tr>
+<tr class="separator:a7cec517105088c2a436f5e1aa5442379"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4e728d0fd84b09a66335ce3a62251c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a1a4e728d0fd84b09a66335ce3a62251c">current_pose_theta_</a></td></tr>
+<tr class="memdesc:a1a4e728d0fd84b09a66335ce3a62251c"><td class="mdescLeft">&#160;</td><td class="mdescRight">current pose variables  <a href="classDeadReckoningNode.html#a1a4e728d0fd84b09a66335ce3a62251c">More...</a><br /></td></tr>
+<tr class="separator:a1a4e728d0fd84b09a66335ce3a62251c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a759a62a033b625326ec6ddfe74c00f"><td class="memItemLeft" align="right" valign="top">rclcpp::Time&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a6a759a62a033b625326ec6ddfe74c00f">last_time_</a></td></tr>
+<tr class="memdesc:a6a759a62a033b625326ec6ddfe74c00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">last time update  <a href="classDeadReckoningNode.html#a6a759a62a033b625326ec6ddfe74c00f">More...</a><br /></td></tr>
+<tr class="separator:a6a759a62a033b625326ec6ddfe74c00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f8ff294e963e088d252f8f8f522eb6"><td class="memItemLeft" align="right" valign="top">std::random_device&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a18f8ff294e963e088d252f8f8f522eb6">rd_</a></td></tr>
+<tr class="memdesc:a18f8ff294e963e088d252f8f8f522eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">random device for noise generation  <a href="classDeadReckoningNode.html#a18f8ff294e963e088d252f8f8f522eb6">More...</a><br /></td></tr>
+<tr class="separator:a18f8ff294e963e088d252f8f8f522eb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac83096831074453e6b3a737d415c9202"><td class="memItemLeft" align="right" valign="top">std::mt19937&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#ac83096831074453e6b3a737d415c9202">gen_</a></td></tr>
+<tr class="memdesc:ac83096831074453e6b3a737d415c9202"><td class="mdescLeft">&#160;</td><td class="mdescRight">random number generator  <a href="classDeadReckoningNode.html#ac83096831074453e6b3a737d415c9202">More...</a><br /></td></tr>
+<tr class="separator:ac83096831074453e6b3a737d415c9202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53813b0d6cd2aa643d9914720f571e6a"><td class="memItemLeft" align="right" valign="top">std::normal_distribution&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeadReckoningNode.html#a53813b0d6cd2aa643d9914720f571e6a">noise_dist_</a></td></tr>
+<tr class="memdesc:a53813b0d6cd2aa643d9914720f571e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">noise distribution  <a href="classDeadReckoningNode.html#a53813b0d6cd2aa643d9914720f571e6a">More...</a><br /></td></tr>
+<tr class="separator:a53813b0d6cd2aa643d9914720f571e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A node that implements dead reckoning for a robot. </p>
 <p>This node subscribes to odometry messages, publishes noisy odometry, and commands the robot's velocity based on the given parameters. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>lab4.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac0237497c0d125f13a2b46725b199cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0237497c0d125f13a2b46725b199cb5">&#9670;&nbsp;</a></span>DeadReckoningNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DeadReckoningNode::DeadReckoningNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classDeadReckoningNode.html" title="A node that implements dead reckoning for a robot.">DeadReckoningNode</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a764dec275e5788578198e2e30bdc0069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a764dec275e5788578198e2e30bdc0069">&#9670;&nbsp;</a></span>normalize_angle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::normalize_angle </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalizes the angle to the range [0, 360). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>The angle to normalize. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The normalized angle. </dd></dl>
+
+</div>
+</div>
+<a id="adf1bd7b5939aa5ec34bf39c19b105dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf1bd7b5939aa5ec34bf39c19b105dec">&#9670;&nbsp;</a></span>odom_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeadReckoningNode::odom_callback </td>
+          <td>(</td>
+          <td class="paramtype">const nav_msgs::msg::Odometry::SharedPtr&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for odometry messages. </p>
+<p>Initializes the pose of the robot when the first odometry message is received.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>The odometry message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28a48cdc0fc693bc34fcb831a690ea8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a48cdc0fc693bc34fcb831a690ea8f">&#9670;&nbsp;</a></span>publish_cmd_vel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeadReckoningNode::publish_cmd_vel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publishes the velocity command based on the robot's direction. </p>
+
+</div>
+</div>
+<a id="a359f6cc80b8aec27ed3251ce8f6864c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359f6cc80b8aec27ed3251ce8f6864c4">&#9670;&nbsp;</a></span>publish_noisy_odometry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeadReckoningNode::publish_noisy_odometry </td>
+          <td>(</td>
+          <td class="paramtype">const rclcpp::Time &amp;&#160;</td>
+          <td class="paramname"><em>current_time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publishes noisy odometry data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">current_time</td><td>The current timestamp. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a59a437dd7e3beefa28ea12f2a77acf4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a437dd7e3beefa28ea12f2a77acf4a">&#9670;&nbsp;</a></span>timer_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeadReckoningNode::timer_callback </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Timer callback for updating the robot's pose and publishing commands. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a84ee1e874f480325dd49c789db3263d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ee1e874f480325dd49c789db3263d7">&#9670;&nbsp;</a></span>angular_speed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::angular_speed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>angular speed </p>
+
+</div>
+</div>
+<a id="a2f8f7625551f18b53c3be1598093bb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8f7625551f18b53c3be1598093bb3e">&#9670;&nbsp;</a></span>cmd_vel_pub_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;geometry_msgs::msg::Twist&gt;::SharedPtr DeadReckoningNode::cmd_vel_pub_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>velocity command publisher </p>
+
+</div>
+</div>
+<a id="a1a4e728d0fd84b09a66335ce3a62251c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a4e728d0fd84b09a66335ce3a62251c">&#9670;&nbsp;</a></span>current_pose_theta_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::current_pose_theta_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>current pose variables </p>
+
+</div>
+</div>
+<a id="ae222453536b72b6e1fd10aadbf4581aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae222453536b72b6e1fd10aadbf4581aa">&#9670;&nbsp;</a></span>current_pose_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::current_pose_x_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7cec517105088c2a436f5e1aa5442379"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cec517105088c2a436f5e1aa5442379">&#9670;&nbsp;</a></span>current_pose_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::current_pose_y_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ea5fa3de31128be30876cba461ccea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea5fa3de31128be30876cba461ccea5">&#9670;&nbsp;</a></span>direction_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string DeadReckoningNode::direction_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>movement direction </p>
+
+</div>
+</div>
+<a id="acbf071c6ac5aee7cb33259bbd48a78f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbf071c6ac5aee7cb33259bbd48a78f7">&#9670;&nbsp;</a></span>distance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::distance_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>distance to travel </p>
+
+</div>
+</div>
+<a id="ac83096831074453e6b3a737d415c9202"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac83096831074453e6b3a737d415c9202">&#9670;&nbsp;</a></span>gen_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::mt19937 DeadReckoningNode::gen_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>random number generator </p>
+
+</div>
+</div>
+<a id="a5791b6e85b7a49d6228b833cbc21a8bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5791b6e85b7a49d6228b833cbc21a8bb">&#9670;&nbsp;</a></span>initial_pose_theta_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::initial_pose_theta_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initial pose variables </p>
+
+</div>
+</div>
+<a id="a24f2f8073c72228dbc311a26cf9f4ebc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f2f8073c72228dbc311a26cf9f4ebc">&#9670;&nbsp;</a></span>initial_pose_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::initial_pose_x_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f92ef9bd77fff17a1282bc02cfd2993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f92ef9bd77fff17a1282bc02cfd2993">&#9670;&nbsp;</a></span>initial_pose_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::initial_pose_y_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14a3e653ffbf1bf704dd2173f006c48a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14a3e653ffbf1bf704dd2173f006c48a">&#9670;&nbsp;</a></span>initialized_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DeadReckoningNode::initialized_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>initialization flag </p>
+
+</div>
+</div>
+<a id="a6a759a62a033b625326ec6ddfe74c00f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a759a62a033b625326ec6ddfe74c00f">&#9670;&nbsp;</a></span>last_time_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Time DeadReckoningNode::last_time_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>last time update </p>
+
+</div>
+</div>
+<a id="a68e2d501fcff12e6e584a110b00217b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e2d501fcff12e6e584a110b00217b5">&#9670;&nbsp;</a></span>linear_speed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DeadReckoningNode::linear_speed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>linear speed </p>
+
+</div>
+</div>
+<a id="a53813b0d6cd2aa643d9914720f571e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53813b0d6cd2aa643d9914720f571e6a">&#9670;&nbsp;</a></span>noise_dist_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::normal_distribution DeadReckoningNode::noise_dist_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>noise distribution </p>
+
+</div>
+</div>
+<a id="a8a6a31b9662ae947ab28f64bb6b5fd1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a6a31b9662ae947ab28f64bb6b5fd1e">&#9670;&nbsp;</a></span>odom_noisy_pub_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;nav_msgs::msg::Odometry&gt;::SharedPtr DeadReckoningNode::odom_noisy_pub_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>noisy odometry publisher </p>
+
+</div>
+</div>
+<a id="a72ad03aa01dc0c4b56e6bd084af6b8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ad03aa01dc0c4b56e6bd084af6b8c5">&#9670;&nbsp;</a></span>odom_sub_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;nav_msgs::msg::Odometry&gt;::SharedPtr DeadReckoningNode::odom_sub_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>odometry subscriber </p>
+
+</div>
+</div>
+<a id="a18f8ff294e963e088d252f8f8f522eb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f8ff294e963e088d252f8f8f522eb6">&#9670;&nbsp;</a></span>rd_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::random_device DeadReckoningNode::rd_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>random device for noise generation </p>
+
+</div>
+</div>
+<a id="a8c95fc3e3ad81efa3da41ccd9f3d5f3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c95fc3e3ad81efa3da41ccd9f3d5f3b">&#9670;&nbsp;</a></span>timer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::TimerBase::SharedPtr DeadReckoningNode::timer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>timer for periodic updates </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="lab4_8cpp.html">lab4.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLaserScanProcessor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LaserScanProcessor Class Reference</div>  </div>
@@ -92,15 +94,195 @@ Collaboration diagram for LaserScanProcessor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aad77abe90ca5455f273cdd3be2d80d9c"><td class="memItemLeft" align="right" valign="top"><a id="aad77abe90ca5455f273cdd3be2d80d9c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#aad77abe90ca5455f273cdd3be2d80d9c">LaserScanProcessor</a> ()</td></tr>
-<tr class="memdesc:aad77abe90ca5455f273cdd3be2d80d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classLaserScanProcessor.html" title="A ROS 2 node that processes LaserScan messages, extracts subsets, and publishes them on different top...">LaserScanProcessor</a> node. This initializes the node, subscribes to the <code>/scan</code> topic, and creates publishers for laser scan subsets. <br /></td></tr>
+<tr class="memitem:aad77abe90ca5455f273cdd3be2d80d9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#aad77abe90ca5455f273cdd3be2d80d9c">LaserScanProcessor</a> ()</td></tr>
+<tr class="memdesc:aad77abe90ca5455f273cdd3be2d80d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classLaserScanProcessor.html" title="A ROS 2 node that processes LaserScan messages, extracts subsets, and publishes them on different top...">LaserScanProcessor</a> node. This initializes the node, subscribes to the <code>/scan</code> topic, and creates publishers for laser scan subsets.  <a href="classLaserScanProcessor.html#aad77abe90ca5455f273cdd3be2d80d9c">More...</a><br /></td></tr>
 <tr class="separator:aad77abe90ca5455f273cdd3be2d80d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ae7968adc56400be1d6dc59e257c59736"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#ae7968adc56400be1d6dc59e257c59736">scanCallback</a> (const sensor_msgs::msg::LaserScan::SharedPtr scan)</td></tr>
+<tr class="memdesc:ae7968adc56400be1d6dc59e257c59736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function that processes LaserScan messages and publishes subsets of the scan data. This function extracts two angular ranges and publishes the corresponding laser scan data. It also samples every nth point from the laser scan and publishes the subset.  <a href="classLaserScanProcessor.html#ae7968adc56400be1d6dc59e257c59736">More...</a><br /></td></tr>
+<tr class="separator:ae7968adc56400be1d6dc59e257c59736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ae20ffb5eb163850574d79e417d970a32"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#ae20ffb5eb163850574d79e417d970a32">scan_sub_</a></td></tr>
+<tr class="memdesc:ae20ffb5eb163850574d79e417d970a32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscription object for receiving LaserScan messages. This subscribes to the <code>/scan</code> topic.  <a href="classLaserScanProcessor.html#ae20ffb5eb163850574d79e417d970a32">More...</a><br /></td></tr>
+<tr class="separator:ae20ffb5eb163850574d79e417d970a32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae148b04a960c747ff0f684f319a62972"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#ae148b04a960c747ff0f684f319a62972">scan_pub_1_</a></td></tr>
+<tr class="memdesc:ae148b04a960c747ff0f684f319a62972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher object for publishing the first subset of laser scan data. This publishes data to the <code>/scan_subset_1</code> topic.  <a href="classLaserScanProcessor.html#ae148b04a960c747ff0f684f319a62972">More...</a><br /></td></tr>
+<tr class="separator:ae148b04a960c747ff0f684f319a62972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a1d58f7d528f9e1fc1b306d9456117"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#a51a1d58f7d528f9e1fc1b306d9456117">scan_pub_2_</a></td></tr>
+<tr class="memdesc:a51a1d58f7d528f9e1fc1b306d9456117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher object for publishing the second subset of laser scan data. This publishes data to the <code>/scan_subset_2</code> topic.  <a href="classLaserScanProcessor.html#a51a1d58f7d528f9e1fc1b306d9456117">More...</a><br /></td></tr>
+<tr class="separator:a51a1d58f7d528f9e1fc1b306d9456117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79ab674a50f39d1f630ea3d754a2605"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLaserScanProcessor.html#aa79ab674a50f39d1f630ea3d754a2605">scan_pub_nth_</a></td></tr>
+<tr class="memdesc:aa79ab674a50f39d1f630ea3d754a2605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher object for publishing the nth-point subset of laser scan data. This publishes data to the <code>/scan_subset_nth</code> topic.  <a href="classLaserScanProcessor.html#aa79ab674a50f39d1f630ea3d754a2605">More...</a><br /></td></tr>
+<tr class="separator:aa79ab674a50f39d1f630ea3d754a2605"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A ROS 2 node that processes LaserScan messages, extracts subsets, and publishes them on different topics. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>lab2.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aad77abe90ca5455f273cdd3be2d80d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad77abe90ca5455f273cdd3be2d80d9c">&#9670;&nbsp;</a></span>LaserScanProcessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LaserScanProcessor::LaserScanProcessor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for the <a class="el" href="classLaserScanProcessor.html" title="A ROS 2 node that processes LaserScan messages, extracts subsets, and publishes them on different top...">LaserScanProcessor</a> node. This initializes the node, subscribes to the <code>/scan</code> topic, and creates publishers for laser scan subsets. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae7968adc56400be1d6dc59e257c59736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7968adc56400be1d6dc59e257c59736">&#9670;&nbsp;</a></span>scanCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LaserScanProcessor::scanCallback </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr&#160;</td>
+          <td class="paramname"><em>scan</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function that processes LaserScan messages and publishes subsets of the scan data. This function extracts two angular ranges and publishes the corresponding laser scan data. It also samples every nth point from the laser scan and publishes the subset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scan</td><td>The received LaserScan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae148b04a960c747ff0f684f319a62972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae148b04a960c747ff0f684f319a62972">&#9670;&nbsp;</a></span>scan_pub_1_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr LaserScanProcessor::scan_pub_1_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher object for publishing the first subset of laser scan data. This publishes data to the <code>/scan_subset_1</code> topic. </p>
+
+</div>
+</div>
+<a id="a51a1d58f7d528f9e1fc1b306d9456117"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a1d58f7d528f9e1fc1b306d9456117">&#9670;&nbsp;</a></span>scan_pub_2_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr LaserScanProcessor::scan_pub_2_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher object for publishing the second subset of laser scan data. This publishes data to the <code>/scan_subset_2</code> topic. </p>
+
+</div>
+</div>
+<a id="aa79ab674a50f39d1f630ea3d754a2605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa79ab674a50f39d1f630ea3d754a2605">&#9670;&nbsp;</a></span>scan_pub_nth_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr LaserScanProcessor::scan_pub_nth_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher object for publishing the nth-point subset of laser scan data. This publishes data to the <code>/scan_subset_nth</code> topic. </p>
+
+</div>
+</div>
+<a id="ae20ffb5eb163850574d79e417d970a32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae20ffb5eb163850574d79e417d970a32">&#9670;&nbsp;</a></span>scan_sub_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr LaserScanProcessor::scan_sub_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscription object for receiving LaserScan messages. This subscribes to the <code>/scan</code> topic. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="lab2_8cpp.html">lab2.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

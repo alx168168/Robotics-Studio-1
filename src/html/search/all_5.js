@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scanmatchinglocalizer_5',['ScanMatchingLocalizer',['../classScanMatchingLocalizer.html',1,'ScanMatchingLocalizer'],['../classScanMatchingLocalizer.html#a2311166d8e8c1327f0e2edb03d7814d9',1,'ScanMatchingLocalizer::ScanMatchingLocalizer()']]],
-  ['scantoimagenode_6',['ScanToImageNode',['../classScanToImageNode.html',1,'ScanToImageNode'],['../classScanToImageNode.html#a95316c7a60dab8c1ad9c78441c897feb',1,'ScanToImageNode::ScanToImageNode()']]]
+  ['gen_5f_24',['gen_',['../classDeadReckoningNode.html#ac83096831074453e6b3a737d415c9202',1,'DeadReckoningNode']]],
+  ['gettransform_25',['getTransform',['../classCylinderDetector.html#ac4fe9e4e044f3cca2a0ebf5cff847941',1,'CylinderDetector']]]
 ];

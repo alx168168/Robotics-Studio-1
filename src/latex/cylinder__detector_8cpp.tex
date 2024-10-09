@@ -1,0 +1,40 @@
+\hypertarget{cylinder__detector_8cpp}{}\doxysection{cylinder\+\_\+detector.\+cpp File Reference}
+\label{cylinder__detector_8cpp}\index{cylinder\_detector.cpp@{cylinder\_detector.cpp}}
+{\ttfamily \#include $<$rclcpp/rclcpp.\+hpp$>$}\newline
+{\ttfamily \#include $<$sensor\+\_\+msgs/msg/laser\+\_\+scan.\+hpp$>$}\newline
+{\ttfamily \#include $<$nav\+\_\+msgs/msg/occupancy\+\_\+grid.\+hpp$>$}\newline
+{\ttfamily \#include $<$nav\+\_\+msgs/msg/odometry.\+hpp$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+ros/buffer.\+h$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+ros/transform\+\_\+listener.\+h$>$}\newline
+{\ttfamily \#include $<$tf2\+\_\+geometry\+\_\+msgs/tf2\+\_\+geometry\+\_\+msgs.\+hpp$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/msg/transform\+\_\+stamped.\+hpp$>$}\newline
+{\ttfamily \#include $<$geometry\+\_\+msgs/msg/point\+\_\+stamped.\+hpp$>$}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for cylinder\+\_\+detector.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cylinder__detector_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classCylinderDetector}{Cylinder\+Detector}} class that handles detection of 30cm diameter cylinders from laser scan data and draws them on a occupancy grid map using Open\+CV for image processing. Needs to have a base map published to the topic \char`\"{}/map\char`\"{} to draw on and publishes the modified map to the topic \char`\"{}modified\+\_\+map\char`\"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{cylinder__detector_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cylinder__detector_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{cylinder__detector_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{cylinder\_detector.cpp@{cylinder\_detector.cpp}!main@{main}}
+\index{main@{main}!cylinder\_detector.cpp@{cylinder\_detector.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+

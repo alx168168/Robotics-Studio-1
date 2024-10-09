@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classMapCompareNode-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MapCompareNode Class Reference</div>  </div>
@@ -92,15 +93,95 @@ Collaboration diagram for MapCompareNode:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3afc090a3b8d359213d1d7537bd2bc5a"><td class="memItemLeft" align="right" valign="top"><a id="a3afc090a3b8d359213d1d7537bd2bc5a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapCompareNode.html#a3afc090a3b8d359213d1d7537bd2bc5a">MapCompareNode</a> ()</td></tr>
-<tr class="memdesc:a3afc090a3b8d359213d1d7537bd2bc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classMapCompareNode.html" title="A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching.">MapCompareNode</a> and initiates the map overlay process. <br /></td></tr>
+<tr class="memitem:a3afc090a3b8d359213d1d7537bd2bc5a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapCompareNode.html#a3afc090a3b8d359213d1d7537bd2bc5a">MapCompareNode</a> ()</td></tr>
+<tr class="memdesc:a3afc090a3b8d359213d1d7537bd2bc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the <a class="el" href="classMapCompareNode.html" title="A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching.">MapCompareNode</a> and initiates the map overlay process.  <a href="classMapCompareNode.html#a3afc090a3b8d359213d1d7537bd2bc5a">More...</a><br /></td></tr>
 <tr class="separator:a3afc090a3b8d359213d1d7537bd2bc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a118975ec06dfd07062024fa741a97de2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMapCompareNode.html#a118975ec06dfd07062024fa741a97de2">overlayMaps</a> (const std::string &amp;map1_path, const std::string &amp;map2_path)</td></tr>
+<tr class="memdesc:a118975ec06dfd07062024fa741a97de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlays two maps by aligning them and combining their visuals.  <a href="classMapCompareNode.html#a118975ec06dfd07062024fa741a97de2">More...</a><br /></td></tr>
+<tr class="separator:a118975ec06dfd07062024fa741a97de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>map_compare.cpp</li>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3afc090a3b8d359213d1d7537bd2bc5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3afc090a3b8d359213d1d7537bd2bc5a">&#9670;&nbsp;</a></span>MapCompareNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">MapCompareNode::MapCompareNode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the <a class="el" href="classMapCompareNode.html" title="A ROS2 node for comparing and overlaying two occupancy grid maps using feature matching.">MapCompareNode</a> and initiates the map overlay process. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a118975ec06dfd07062024fa741a97de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118975ec06dfd07062024fa741a97de2">&#9670;&nbsp;</a></span>overlayMaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapCompareNode::overlayMaps </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>map1_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>map2_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overlays two maps by aligning them and combining their visuals. </p>
+<p>This function loads the two specified map images, resizes the second map to match the first, detects features in both maps, matches these features, and computes the homography transformation to align the second map with the first. It then creates an overlay image and saves it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map1_path</td><td>The file path to the first map image. </td></tr>
+    <tr><td class="paramname">map2_path</td><td>The file path to the second map image. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="map__compare_8cpp.html">map_compare.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

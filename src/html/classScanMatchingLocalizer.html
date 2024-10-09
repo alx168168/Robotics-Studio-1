@@ -63,6 +63,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classScanMatchingLocalizer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ScanMatchingLocalizer Class Reference</div>  </div>
@@ -95,6 +97,79 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2311166d8e8c1327f0e2edb03d7814d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a2311166d8e8c1327f0e2edb03d7814d9">ScanMatchingLocalizer</a> ()</td></tr>
 <tr class="memdesc:a2311166d8e8c1327f0e2edb03d7814d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classScanMatchingLocalizer.html" title="A class that implements scan matching localization for a robot using occupancy grid maps and laser sc...">ScanMatchingLocalizer</a> object.  <a href="classScanMatchingLocalizer.html#a2311166d8e8c1327f0e2edb03d7814d9">More...</a><br /></td></tr>
 <tr class="separator:a2311166d8e8c1327f0e2edb03d7814d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a7dea1b3e4cbcd36d01e2397ee0645a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a7dea1b3e4cbcd36d01e2397ee0645a00">mapCallback</a> (const nav_msgs::msg::OccupancyGrid::SharedPtr mapMsg)</td></tr>
+<tr class="memdesc:a7dea1b3e4cbcd36d01e2397ee0645a00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for processing incoming occupancy grid messages.  <a href="classScanMatchingLocalizer.html#a7dea1b3e4cbcd36d01e2397ee0645a00">More...</a><br /></td></tr>
+<tr class="separator:a7dea1b3e4cbcd36d01e2397ee0645a00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78cbea8535c5891761f8851b6c5a76ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a78cbea8535c5891761f8851b6c5a76ea">scanCallback</a> (const sensor_msgs::msg::LaserScan::SharedPtr scanMsg)</td></tr>
+<tr class="memdesc:a78cbea8535c5891761f8851b6c5a76ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for processing incoming laser scan messages.  <a href="classScanMatchingLocalizer.html#a78cbea8535c5891761f8851b6c5a76ea">More...</a><br /></td></tr>
+<tr class="separator:a78cbea8535c5891761f8851b6c5a76ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f90979bc4f2e407c72372176841314a"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a6f90979bc4f2e407c72372176841314a">extractMapSection</a> (double robot_x, double robot_y, double map_scale, double origin_x, double origin_y, cv::Mat &amp;map_image, int section_size)</td></tr>
+<tr class="memdesc:a6f90979bc4f2e407c72372176841314a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts a section of the map centered on the robot's position.  <a href="classScanMatchingLocalizer.html#a6f90979bc4f2e407c72372176841314a">More...</a><br /></td></tr>
+<tr class="separator:a6f90979bc4f2e407c72372176841314a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac863d9514e5cd7f81b2f990485de7065"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#ac863d9514e5cd7f81b2f990485de7065">extractEdges</a> (cv::Mat &amp;input_image)</td></tr>
+<tr class="memdesc:ac863d9514e5cd7f81b2f990485de7065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects edges in the given input image.  <a href="classScanMatchingLocalizer.html#ac863d9514e5cd7f81b2f990485de7065">More...</a><br /></td></tr>
+<tr class="separator:ac863d9514e5cd7f81b2f990485de7065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8c1343879ef9a338d568cf8613f9d49"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#aa8c1343879ef9a338d568cf8613f9d49">laserScanToMat</a> (const sensor_msgs::msg::LaserScan::SharedPtr &amp;scan)</td></tr>
+<tr class="memdesc:aa8c1343879ef9a338d568cf8613f9d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a laser scan message to a cv::Mat image.  <a href="classScanMatchingLocalizer.html#aa8c1343879ef9a338d568cf8613f9d49">More...</a><br /></td></tr>
+<tr class="separator:aa8c1343879ef9a338d568cf8613f9d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9825a490251857b45879affdd82313ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a9825a490251857b45879affdd82313ff">calculateYawChange</a> (cv::Mat &amp;map_edges, cv::Mat &amp;laser_image)</td></tr>
+<tr class="memdesc:a9825a490251857b45879affdd82313ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the yaw change based on the edges of the map and the laser scan image.  <a href="classScanMatchingLocalizer.html#a9825a490251857b45879affdd82313ff">More...</a><br /></td></tr>
+<tr class="separator:a9825a490251857b45879affdd82313ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7947b4ccef46eedc9f9fd9dc4bbb3c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a7947b4ccef46eedc9f9fd9dc4bbb3c53">propagateRobot</a> ()</td></tr>
+<tr class="memdesc:a7947b4ccef46eedc9f9fd9dc4bbb3c53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Propagates the robot's position using simplified odometry.  <a href="classScanMatchingLocalizer.html#a7947b4ccef46eedc9f9fd9dc4bbb3c53">More...</a><br /></td></tr>
+<tr class="separator:a7947b4ccef46eedc9f9fd9dc4bbb3c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f87075b06209f8971b49f8c36b53d5"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a28f87075b06209f8971b49f8c36b53d5">occupancyGridToImage</a> (const nav_msgs::msg::OccupancyGrid::SharedPtr grid)</td></tr>
+<tr class="memdesc:a28f87075b06209f8971b49f8c36b53d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an occupancy grid message to a cv::Mat image.  <a href="classScanMatchingLocalizer.html#a28f87075b06209f8971b49f8c36b53d5">More...</a><br /></td></tr>
+<tr class="separator:a28f87075b06209f8971b49f8c36b53d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad1bb142ad98872d800a0ec1693ed203d"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; nav_msgs::msg::OccupancyGrid &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#ad1bb142ad98872d800a0ec1693ed203d">map_subscriber_</a></td></tr>
+<tr class="memdesc:ad1bb142ad98872d800a0ec1693ed203d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscriber for the occupancy grid map.  <a href="classScanMatchingLocalizer.html#ad1bb142ad98872d800a0ec1693ed203d">More...</a><br /></td></tr>
+<tr class="separator:ad1bb142ad98872d800a0ec1693ed203d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7058a79df93ca8c930cff0134916252f"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a7058a79df93ca8c930cff0134916252f">scan_subscriber_</a></td></tr>
+<tr class="memdesc:a7058a79df93ca8c930cff0134916252f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscriber for the laser scan data.  <a href="classScanMatchingLocalizer.html#a7058a79df93ca8c930cff0134916252f">More...</a><br /></td></tr>
+<tr class="separator:a7058a79df93ca8c930cff0134916252f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a09a63672f1f84be0ee7d68eef1281"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; geometry_msgs::msg::Twist &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a30a09a63672f1f84be0ee7d68eef1281">odom_publisher_</a></td></tr>
+<tr class="memdesc:a30a09a63672f1f84be0ee7d68eef1281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Publisher for velocity commands.  <a href="classScanMatchingLocalizer.html#a30a09a63672f1f84be0ee7d68eef1281">More...</a><br /></td></tr>
+<tr class="separator:a30a09a63672f1f84be0ee7d68eef1281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5201af7257421c44ec1c7bdd95a44c60"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a5201af7257421c44ec1c7bdd95a44c60">relative_orientaion_</a> = 0.0</td></tr>
+<tr class="memdesc:a5201af7257421c44ec1c7bdd95a44c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to keep track of relative orientation.  <a href="classScanMatchingLocalizer.html#a5201af7257421c44ec1c7bdd95a44c60">More...</a><br /></td></tr>
+<tr class="separator:a5201af7257421c44ec1c7bdd95a44c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4021fd0b24aea251dbbb61b4d3bae3f"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#af4021fd0b24aea251dbbb61b4d3bae3f">map_image_</a></td></tr>
+<tr class="separator:af4021fd0b24aea251dbbb61b4d3bae3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23105d15be89bd02a5489429711f13e"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#ad23105d15be89bd02a5489429711f13e">map_edges_</a></td></tr>
+<tr class="memdesc:ad23105d15be89bd02a5489429711f13e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Images for the map and edges.  <a href="classScanMatchingLocalizer.html#ad23105d15be89bd02a5489429711f13e">More...</a><br /></td></tr>
+<tr class="separator:ad23105d15be89bd02a5489429711f13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad233e6bac55a6b7944fed73b8d0ffefa"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#ad233e6bac55a6b7944fed73b8d0ffefa">map_scale_</a></td></tr>
+<tr class="separator:ad233e6bac55a6b7944fed73b8d0ffefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9df89550733a38a55d46424884495e4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#ad9df89550733a38a55d46424884495e4">origin_x_</a></td></tr>
+<tr class="separator:ad9df89550733a38a55d46424884495e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53bbe81e0f49ebd42b9dda54e9658fff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a53bbe81e0f49ebd42b9dda54e9658fff">origin_y_</a></td></tr>
+<tr class="memdesc:a53bbe81e0f49ebd42b9dda54e9658fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map scaling and origin coordinates.  <a href="classScanMatchingLocalizer.html#a53bbe81e0f49ebd42b9dda54e9658fff">More...</a><br /></td></tr>
+<tr class="separator:a53bbe81e0f49ebd42b9dda54e9658fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b9c8a7905c00b58199f25d08ae5710"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a51b9c8a7905c00b58199f25d08ae5710">map_size_x_</a></td></tr>
+<tr class="separator:a51b9c8a7905c00b58199f25d08ae5710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a430d8011631b1936d0053dd587919d8c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a430d8011631b1936d0053dd587919d8c">map_size_y_</a></td></tr>
+<tr class="memdesc:a430d8011631b1936d0053dd587919d8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the map.  <a href="classScanMatchingLocalizer.html#a430d8011631b1936d0053dd587919d8c">More...</a><br /></td></tr>
+<tr class="separator:a430d8011631b1936d0053dd587919d8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a888f8d55cde5a20fede38f9780aeab6b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a888f8d55cde5a20fede38f9780aeab6b">map_received_</a> = false</td></tr>
+<tr class="memdesc:a888f8d55cde5a20fede38f9780aeab6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether the map has been received.  <a href="classScanMatchingLocalizer.html#a888f8d55cde5a20fede38f9780aeab6b">More...</a><br /></td></tr>
+<tr class="separator:a888f8d55cde5a20fede38f9780aeab6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151a795508601238c2507c155a982c25"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a151a795508601238c2507c155a982c25">laser_image_</a></td></tr>
+<tr class="separator:a151a795508601238c2507c155a982c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163c24a47fed3cd34d4b2fd80cfbf9bc"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a163c24a47fed3cd34d4b2fd80cfbf9bc">map_section_</a></td></tr>
+<tr class="memdesc:a163c24a47fed3cd34d4b2fd80cfbf9bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Images for the laser scan and extracted map section.  <a href="classScanMatchingLocalizer.html#a163c24a47fed3cd34d4b2fd80cfbf9bc">More...</a><br /></td></tr>
+<tr class="separator:a163c24a47fed3cd34d4b2fd80cfbf9bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663490a7c485f96291707600e45d4b77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a663490a7c485f96291707600e45d4b77">first_scan_</a> = false</td></tr>
+<tr class="memdesc:a663490a7c485f96291707600e45d4b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag indicating whether this is the first scan.  <a href="classScanMatchingLocalizer.html#a663490a7c485f96291707600e45d4b77">More...</a><br /></td></tr>
+<tr class="separator:a663490a7c485f96291707600e45d4b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172853064ea91ea50836268e972d4ba1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classScanMatchingLocalizer.html#a172853064ea91ea50836268e972d4ba1">angle_difference_</a></td></tr>
+<tr class="memdesc:a172853064ea91ea50836268e972d4ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to store the angle difference.  <a href="classScanMatchingLocalizer.html#a172853064ea91ea50836268e972d4ba1">More...</a><br /></td></tr>
+<tr class="separator:a172853064ea91ea50836268e972d4ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class that implements scan matching localization for a robot using occupancy grid maps and laser scans. </p>
@@ -129,8 +204,712 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9825a490251857b45879affdd82313ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9825a490251857b45879affdd82313ff">&#9670;&nbsp;</a></span>calculateYawChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanMatchingLocalizer::calculateYawChange </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>map_edges</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>laser_image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the yaw change based on the edges of the map and the laser scan image. </p>
+<p>This function implements feature matching logic to calculate the yaw difference between the detected edges in the map and the laser scan.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map_edges</td><td>The edges of the map extracted from the map section. </td></tr>
+    <tr><td class="paramname">laser_image</td><td>The image generated from the laser scan data. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac863d9514e5cd7f81b2f990485de7065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac863d9514e5cd7f81b2f990485de7065">&#9670;&nbsp;</a></span>extractEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::extractEdges </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>input_image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detects edges in the given input image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input_image</td><td>The input image in which to detect edges. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A cv::Mat containing the detected edges. </dd></dl>
+
+</div>
+</div>
+<a id="a6f90979bc4f2e407c72372176841314a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f90979bc4f2e407c72372176841314a">&#9670;&nbsp;</a></span>extractMapSection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::extractMapSection </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>robot_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>robot_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>map_scale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>origin_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>origin_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>map_image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>section_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extracts a section of the map centered on the robot's position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">robot_x</td><td>The x-coordinate of the robot's position. </td></tr>
+    <tr><td class="paramname">robot_y</td><td>The y-coordinate of the robot's position. </td></tr>
+    <tr><td class="paramname">map_scale</td><td>The scale of the map. </td></tr>
+    <tr><td class="paramname">origin_x</td><td>The x-coordinate of the map's origin. </td></tr>
+    <tr><td class="paramname">origin_y</td><td>The y-coordinate of the map's origin. </td></tr>
+    <tr><td class="paramname">map_image</td><td>The map image to extract from. </td></tr>
+    <tr><td class="paramname">section_size</td><td>The size of the section to extract. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A cv::Mat containing the extracted map section. </dd></dl>
+
+</div>
+</div>
+<a id="aa8c1343879ef9a338d568cf8613f9d49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c1343879ef9a338d568cf8613f9d49">&#9670;&nbsp;</a></span>laserScanToMat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::laserScanToMat </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr &amp;&#160;</td>
+          <td class="paramname"><em>scan</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts a laser scan message to a cv::Mat image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scan</td><td>A shared pointer to the laser scan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A cv::Mat representing the laser scan as an image. </dd></dl>
+
+</div>
+</div>
+<a id="a7dea1b3e4cbcd36d01e2397ee0645a00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dea1b3e4cbcd36d01e2397ee0645a00">&#9670;&nbsp;</a></span>mapCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanMatchingLocalizer::mapCallback </td>
+          <td>(</td>
+          <td class="paramtype">const nav_msgs::msg::OccupancyGrid::SharedPtr&#160;</td>
+          <td class="paramname"><em>mapMsg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for processing incoming occupancy grid messages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mapMsg</td><td>A shared pointer to the occupancy grid message received. This function converts the occupancy grid to an image and marks that the map has been received. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28f87075b06209f8971b49f8c36b53d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f87075b06209f8971b49f8c36b53d5">&#9670;&nbsp;</a></span>occupancyGridToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::occupancyGridToImage </td>
+          <td>(</td>
+          <td class="paramtype">const nav_msgs::msg::OccupancyGrid::SharedPtr&#160;</td>
+          <td class="paramname"><em>grid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts an occupancy grid message to a cv::Mat image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">grid</td><td>A shared pointer to the occupancy grid message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A cv::Mat representation of the occupancy grid. </dd></dl>
+
+</div>
+</div>
+<a id="a7947b4ccef46eedc9f9fd9dc4bbb3c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7947b4ccef46eedc9f9fd9dc4bbb3c53">&#9670;&nbsp;</a></span>propagateRobot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanMatchingLocalizer::propagateRobot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Propagates the robot's position using simplified odometry. </p>
+<p>This function publishes velocity commands to move the robot based on the calculated orientation. </p>
+
+</div>
+</div>
+<a id="a78cbea8535c5891761f8851b6c5a76ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78cbea8535c5891761f8851b6c5a76ea">&#9670;&nbsp;</a></span>scanCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ScanMatchingLocalizer::scanCallback </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr&#160;</td>
+          <td class="paramname"><em>scanMsg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for processing incoming laser scan messages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scanMsg</td><td>A shared pointer to the laser scan message received. This function converts the laser scan data to an image, extracts a section of the map around the robot, detects edges in the map section, and updates the robot's position using scan matching. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a172853064ea91ea50836268e972d4ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172853064ea91ea50836268e972d4ba1">&#9670;&nbsp;</a></span>angle_difference_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanMatchingLocalizer::angle_difference_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable to store the angle difference. </p>
+
+</div>
+</div>
+<a id="a663490a7c485f96291707600e45d4b77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a663490a7c485f96291707600e45d4b77">&#9670;&nbsp;</a></span>first_scan_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScanMatchingLocalizer::first_scan_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag indicating whether this is the first scan. </p>
+
+</div>
+</div>
+<a id="a151a795508601238c2507c155a982c25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151a795508601238c2507c155a982c25">&#9670;&nbsp;</a></span>laser_image_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::laser_image_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad23105d15be89bd02a5489429711f13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad23105d15be89bd02a5489429711f13e">&#9670;&nbsp;</a></span>map_edges_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::map_edges_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Images for the map and edges. </p>
+
+</div>
+</div>
+<a id="af4021fd0b24aea251dbbb61b4d3bae3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4021fd0b24aea251dbbb61b4d3bae3f">&#9670;&nbsp;</a></span>map_image_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::map_image_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a888f8d55cde5a20fede38f9780aeab6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a888f8d55cde5a20fede38f9780aeab6b">&#9670;&nbsp;</a></span>map_received_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ScanMatchingLocalizer::map_received_ = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flag indicating whether the map has been received. </p>
+
+</div>
+</div>
+<a id="ad233e6bac55a6b7944fed73b8d0ffefa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad233e6bac55a6b7944fed73b8d0ffefa">&#9670;&nbsp;</a></span>map_scale_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanMatchingLocalizer::map_scale_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a163c24a47fed3cd34d4b2fd80cfbf9bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a163c24a47fed3cd34d4b2fd80cfbf9bc">&#9670;&nbsp;</a></span>map_section_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat ScanMatchingLocalizer::map_section_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Images for the laser scan and extracted map section. </p>
+
+</div>
+</div>
+<a id="a51b9c8a7905c00b58199f25d08ae5710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b9c8a7905c00b58199f25d08ae5710">&#9670;&nbsp;</a></span>map_size_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScanMatchingLocalizer::map_size_x_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a430d8011631b1936d0053dd587919d8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a430d8011631b1936d0053dd587919d8c">&#9670;&nbsp;</a></span>map_size_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ScanMatchingLocalizer::map_size_y_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Size of the map. </p>
+
+</div>
+</div>
+<a id="ad1bb142ad98872d800a0ec1693ed203d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1bb142ad98872d800a0ec1693ed203d">&#9670;&nbsp;</a></span>map_subscriber_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;nav_msgs::msg::OccupancyGrid&gt;::SharedPtr ScanMatchingLocalizer::map_subscriber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscriber for the occupancy grid map. </p>
+
+</div>
+</div>
+<a id="a30a09a63672f1f84be0ee7d68eef1281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a09a63672f1f84be0ee7d68eef1281">&#9670;&nbsp;</a></span>odom_publisher_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;geometry_msgs::msg::Twist&gt;::SharedPtr ScanMatchingLocalizer::odom_publisher_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Publisher for velocity commands. </p>
+
+</div>
+</div>
+<a id="ad9df89550733a38a55d46424884495e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9df89550733a38a55d46424884495e4">&#9670;&nbsp;</a></span>origin_x_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanMatchingLocalizer::origin_x_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53bbe81e0f49ebd42b9dda54e9658fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53bbe81e0f49ebd42b9dda54e9658fff">&#9670;&nbsp;</a></span>origin_y_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanMatchingLocalizer::origin_y_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Map scaling and origin coordinates. </p>
+
+</div>
+</div>
+<a id="a5201af7257421c44ec1c7bdd95a44c60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5201af7257421c44ec1c7bdd95a44c60">&#9670;&nbsp;</a></span>relative_orientaion_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ScanMatchingLocalizer::relative_orientaion_ = 0.0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Variable to keep track of relative orientation. </p>
+
+</div>
+</div>
+<a id="a7058a79df93ca8c930cff0134916252f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7058a79df93ca8c930cff0134916252f">&#9670;&nbsp;</a></span>scan_subscriber_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr ScanMatchingLocalizer::scan_subscriber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Subscriber for the laser scan data. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>sprint2.cpp</li>
+<li><a class="el" href="sprint2_8cpp.html">sprint2.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" title=" " alt="" coords="5,157,108,184"/>
-<area shape="rect" id="node2" href="$classCylinderDetector.html" title=" " alt="" coords="175,5,307,32"/>
+<area shape="rect" id="node2" href="$classCylinderDetector.html" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra..." alt="" coords="175,5,307,32"/>
 <area shape="rect" id="node3" href="$classDeadReckoningNode.html" title="A node that implements dead reckoning for a robot." alt="" coords="163,56,320,83"/>
 <area shape="rect" id="node4" href="$classImageProcessor.html" title="A ROS 2 node that subscribes to an image topic, processes the image, and republishes the processed im..." alt="" coords="178,107,305,133"/>
 <area shape="rect" id="node5" href="$classLaserScanProcessor.html" title="A ROS 2 node that processes LaserScan messages, extracts subsets, and publishes them on different top..." alt="" coords="166,157,317,184"/>

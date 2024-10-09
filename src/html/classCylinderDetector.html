@@ -62,17 +62,23 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCylinderDetector-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CylinderDetector Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classCylinderDetector.html" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra...">CylinderDetector</a> class that handles detection of 30cm diameter cylinders from laser scan data and draws them on a occupancy grid map using OpenCV for image processing. Needs to have a base map published to the topic "/map" to draw on and publishes the modified map to the topic "modified_map".  
+ <a href="classCylinderDetector.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for CylinderDetector:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCylinderDetector__inherit__graph.png" border="0" usemap="#aCylinderDetector_inherit__map" alt="Inheritance graph"/></div>
 <map name="aCylinderDetector_inherit__map" id="aCylinderDetector_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,137,107"/>
+<area shape="rect" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra..." alt="" coords="5,80,137,107"/>
 <area shape="rect" title=" " alt="" coords="20,5,123,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -81,12 +87,836 @@ Collaboration diagram for CylinderDetector:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCylinderDetector__coll__graph.png" border="0" usemap="#aCylinderDetector_coll__map" alt="Collaboration graph"/></div>
 <map name="aCylinderDetector_coll__map" id="aCylinderDetector_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,137,107"/>
+<area shape="rect" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra..." alt="" coords="5,80,137,107"/>
 <area shape="rect" title=" " alt="" coords="20,5,123,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab9c25e0bf46af5299a014ff6e461e972"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#ab9c25e0bf46af5299a014ff6e461e972">CylinderDetector</a> ()</td></tr>
+<tr class="memdesc:ab9c25e0bf46af5299a014ff6e461e972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classCylinderDetector.html" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra...">CylinderDetector</a>.  <a href="classCylinderDetector.html#ab9c25e0bf46af5299a014ff6e461e972">More...</a><br /></td></tr>
+<tr class="separator:ab9c25e0bf46af5299a014ff6e461e972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac4fe9e4e044f3cca2a0ebf5cff847941"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#ac4fe9e4e044f3cca2a0ebf5cff847941">getTransform</a> ()</td></tr>
+<tr class="memdesc:ac4fe9e4e044f3cca2a0ebf5cff847941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the transform from base_scan to map frame.  <a href="classCylinderDetector.html#ac4fe9e4e044f3cca2a0ebf5cff847941">More...</a><br /></td></tr>
+<tr class="separator:ac4fe9e4e044f3cca2a0ebf5cff847941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885ac7202b59c807423b81d0704567f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a885ac7202b59c807423b81d0704567f8">mapCallback</a> (const nav_msgs::msg::OccupancyGrid::SharedPtr msg)</td></tr>
+<tr class="memdesc:a885ac7202b59c807423b81d0704567f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for the Occupancy Grid Map.  <a href="classCylinderDetector.html#a885ac7202b59c807423b81d0704567f8">More...</a><br /></td></tr>
+<tr class="separator:a885ac7202b59c807423b81d0704567f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e65682eec7acca088cc101cb77987b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#ad9e65682eec7acca088cc101cb77987b">drawCircle</a> (std::vector&lt; int8_t &gt; &amp;data, int width, int center_x, int center_y, int radius)</td></tr>
+<tr class="memdesc:ad9e65682eec7acca088cc101cb77987b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a circle on the map.  <a href="classCylinderDetector.html#ad9e65682eec7acca088cc101cb77987b">More...</a><br /></td></tr>
+<tr class="separator:ad9e65682eec7acca088cc101cb77987b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032e436c1d25d221ddc4932d95f420bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a032e436c1d25d221ddc4932d95f420bf">setCirclePoints</a> (std::vector&lt; int8_t &gt; &amp;data, int width, int center_x, int center_y, int x, int y)</td></tr>
+<tr class="memdesc:a032e436c1d25d221ddc4932d95f420bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the points of a circle on the map.  <a href="classCylinderDetector.html#a032e436c1d25d221ddc4932d95f420bf">More...</a><br /></td></tr>
+<tr class="separator:a032e436c1d25d221ddc4932d95f420bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9436b075fb859638bbbb903cfc1afb92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a9436b075fb859638bbbb903cfc1afb92">scanCallback</a> (const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)</td></tr>
+<tr class="memdesc:a9436b075fb859638bbbb903cfc1afb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback function for LaserScan.  <a href="classCylinderDetector.html#a9436b075fb859638bbbb903cfc1afb92">More...</a><br /></td></tr>
+<tr class="separator:a9436b075fb859638bbbb903cfc1afb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5e8d2282f3f919b9d89fdcdd1e6b31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#abc5e8d2282f3f919b9d89fdcdd1e6b31">convertImageToCoordinates</a> (int img_x, int img_y, double max_range, int image_size, double &amp;real_x, double &amp;real_y)</td></tr>
+<tr class="memdesc:abc5e8d2282f3f919b9d89fdcdd1e6b31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts image coordinates to real-world coordinates.  <a href="classCylinderDetector.html#abc5e8d2282f3f919b9d89fdcdd1e6b31">More...</a><br /></td></tr>
+<tr class="separator:abc5e8d2282f3f919b9d89fdcdd1e6b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae21f78fbac4a4fcf39196aafb8546f08"><td class="memItemLeft" align="right" valign="top">geometry_msgs::msg::Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#ae21f78fbac4a4fcf39196aafb8546f08">transformToGlobalFrame</a> (double x_local, double y_local, const geometry_msgs::msg::Transform &amp;transform)</td></tr>
+<tr class="memdesc:ae21f78fbac4a4fcf39196aafb8546f08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms a point from the robot frame to the global frame.  <a href="classCylinderDetector.html#ae21f78fbac4a4fcf39196aafb8546f08">More...</a><br /></td></tr>
+<tr class="separator:ae21f78fbac4a4fcf39196aafb8546f08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb890559768c7fabae668c2a01c74284"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#aeb890559768c7fabae668c2a01c74284">quaternionToYaw</a> (const geometry_msgs::msg::Quaternion &amp;q)</td></tr>
+<tr class="memdesc:aeb890559768c7fabae668c2a01c74284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts quaternion to yaw (theta).  <a href="classCylinderDetector.html#aeb890559768c7fabae668c2a01c74284">More...</a><br /></td></tr>
+<tr class="separator:aeb890559768c7fabae668c2a01c74284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720de31dabdda4f2c4fba65baae28164"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a720de31dabdda4f2c4fba65baae28164">laserScanToImage</a> (const sensor_msgs::msg::LaserScan::SharedPtr scan_msg)</td></tr>
+<tr class="memdesc:a720de31dabdda4f2c4fba65baae28164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the laser scan data into a 2D image.  <a href="classCylinderDetector.html#a720de31dabdda4f2c4fba65baae28164">More...</a><br /></td></tr>
+<tr class="separator:a720de31dabdda4f2c4fba65baae28164"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcd0f2c2991ff0c4d577382d95f783f5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Vec3f &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#abcd0f2c2991ff0c4d577382d95f783f5">detectCirclesInImage</a> (const cv::Mat &amp;image)</td></tr>
+<tr class="memdesc:abcd0f2c2991ff0c4d577382d95f783f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects circles in the image using Hough Circle Transform.  <a href="classCylinderDetector.html#abcd0f2c2991ff0c4d577382d95f783f5">More...</a><br /></td></tr>
+<tr class="separator:abcd0f2c2991ff0c4d577382d95f783f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fd1f11f7b3862abdd2b22a9eed9c3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a01fd1f11f7b3862abdd2b22a9eed9c3a">displayImage</a> (const cv::Mat &amp;image)</td></tr>
+<tr class="memdesc:a01fd1f11f7b3862abdd2b22a9eed9c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays the image with detected circles.  <a href="classCylinderDetector.html#a01fd1f11f7b3862abdd2b22a9eed9c3a">More...</a><br /></td></tr>
+<tr class="separator:a01fd1f11f7b3862abdd2b22a9eed9c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac348b6a9a345a17d81fb378af61854d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#ac348b6a9a345a17d81fb378af61854d1">drawCircleOnMap</a> (double x_world, double y_world, double radius)</td></tr>
+<tr class="memdesc:ac348b6a9a345a17d81fb378af61854d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a circle on the map.  <a href="classCylinderDetector.html#ac348b6a9a345a17d81fb378af61854d1">More...</a><br /></td></tr>
+<tr class="separator:ac348b6a9a345a17d81fb378af61854d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af41d2e6a8276b40ef52f8ad5a491d10d"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; sensor_msgs::msg::LaserScan &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#af41d2e6a8276b40ef52f8ad5a491d10d">laser_scan_subscriber_</a></td></tr>
+<tr class="separator:af41d2e6a8276b40ef52f8ad5a491d10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b186a7749cb7a5f8dddc76869808d47"><td class="memItemLeft" align="right" valign="top">rclcpp::Subscription&lt; nav_msgs::msg::OccupancyGrid &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a4b186a7749cb7a5f8dddc76869808d47">map_subscription_</a></td></tr>
+<tr class="separator:a4b186a7749cb7a5f8dddc76869808d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7488470c8d0575a3b9f26dd6252c844b"><td class="memItemLeft" align="right" valign="top">rclcpp::Publisher&lt; nav_msgs::msg::OccupancyGrid &gt;::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a7488470c8d0575a3b9f26dd6252c844b">map_publisher_</a></td></tr>
+<tr class="separator:a7488470c8d0575a3b9f26dd6252c844b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63e7fc59239e79f47c491f2cc13bfdaa"><td class="memItemLeft" align="right" valign="top">rclcpp::TimerBase::SharedPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a63e7fc59239e79f47c491f2cc13bfdaa">timer_</a></td></tr>
+<tr class="separator:a63e7fc59239e79f47c491f2cc13bfdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ca2c7ff3a43ead7259588c5a6c7bcd6"><td class="memItemLeft" align="right" valign="top">tf2_ros::Buffer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a1ca2c7ff3a43ead7259588c5a6c7bcd6">tf_buffer_</a></td></tr>
+<tr class="separator:a1ca2c7ff3a43ead7259588c5a6c7bcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfd458e868243157ffcc4408d3b00956"><td class="memItemLeft" align="right" valign="top">tf2_ros::TransformListener&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#adfd458e868243157ffcc4408d3b00956">tf_listener_</a></td></tr>
+<tr class="separator:adfd458e868243157ffcc4408d3b00956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2053d357a92d7df5447ea93ab56e4e"><td class="memItemLeft" align="right" valign="top">geometry_msgs::msg::TransformStamped&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#a3c2053d357a92d7df5447ea93ab56e4e">transform_stamped_</a></td></tr>
+<tr class="separator:a3c2053d357a92d7df5447ea93ab56e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa39ab5d5db699c284487e80fbb54a114"><td class="memItemLeft" align="right" valign="top">nav_msgs::msg::OccupancyGrid&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCylinderDetector.html#aa39ab5d5db699c284487e80fbb54a114">modified_map_</a></td></tr>
+<tr class="separator:aa39ab5d5db699c284487e80fbb54a114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classCylinderDetector.html" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra...">CylinderDetector</a> class that handles detection of 30cm diameter cylinders from laser scan data and draws them on a occupancy grid map using OpenCV for image processing. Needs to have a base map published to the topic "/map" to draw on and publishes the modified map to the topic "modified_map". </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab9c25e0bf46af5299a014ff6e461e972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c25e0bf46af5299a014ff6e461e972">&#9670;&nbsp;</a></span>CylinderDetector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CylinderDetector::CylinderDetector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classCylinderDetector.html" title="CylinderDetector class that handles detection of 30cm diameter cylinders from laser scan data and dra...">CylinderDetector</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="abc5e8d2282f3f919b9d89fdcdd1e6b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5e8d2282f3f919b9d89fdcdd1e6b31">&#9670;&nbsp;</a></span>convertImageToCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::convertImageToCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>img_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>img_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>image_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>real_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>real_y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts image coordinates to real-world coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">img_x</td><td>Image X coordinate. </td></tr>
+    <tr><td class="paramname">img_y</td><td>Image Y coordinate. </td></tr>
+    <tr><td class="paramname">max_range</td><td>Maximum range of the laser scan. </td></tr>
+    <tr><td class="paramname">image_size</td><td>Image size in pixels. </td></tr>
+    <tr><td class="paramname">real_x</td><td>Real-world X coordinate (output). </td></tr>
+    <tr><td class="paramname">real_y</td><td>Real-world Y coordinate (output). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abcd0f2c2991ff0c4d577382d95f783f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd0f2c2991ff0c4d577382d95f783f5">&#9670;&nbsp;</a></span>detectCirclesInImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;cv::Vec3f&gt; CylinderDetector::detectCirclesInImage </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Detects circles in the image using Hough Circle Transform. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Input image. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of detected circles. </dd></dl>
+
+</div>
+</div>
+<a id="a01fd1f11f7b3862abdd2b22a9eed9c3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01fd1f11f7b3862abdd2b22a9eed9c3a">&#9670;&nbsp;</a></span>displayImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::displayImage </td>
+          <td>(</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>image</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Displays the image with detected circles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Image to be displayed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad9e65682eec7acca088cc101cb77987b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9e65682eec7acca088cc101cb77987b">&#9670;&nbsp;</a></span>drawCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::drawCircle </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>center_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>center_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a circle on the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Map data array. </td></tr>
+    <tr><td class="paramname">width</td><td>Map width in cells. </td></tr>
+    <tr><td class="paramname">center_x</td><td>Center X of the circle. </td></tr>
+    <tr><td class="paramname">center_y</td><td>Center Y of the circle. </td></tr>
+    <tr><td class="paramname">radius</td><td>Radius of the circle in cells. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac348b6a9a345a17d81fb378af61854d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac348b6a9a345a17d81fb378af61854d1">&#9670;&nbsp;</a></span>drawCircleOnMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::drawCircleOnMap </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y_world</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draws a circle on the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_world</td><td>World X coordinate. </td></tr>
+    <tr><td class="paramname">y_world</td><td>World Y coordinate. </td></tr>
+    <tr><td class="paramname">radius</td><td>Radius of the circle. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac4fe9e4e044f3cca2a0ebf5cff847941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fe9e4e044f3cca2a0ebf5cff847941">&#9670;&nbsp;</a></span>getTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::getTransform </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the transform from base_scan to map frame. </p>
+
+</div>
+</div>
+<a id="a720de31dabdda4f2c4fba65baae28164"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720de31dabdda4f2c4fba65baae28164">&#9670;&nbsp;</a></span>laserScanToImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat CylinderDetector::laserScanToImage </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr&#160;</td>
+          <td class="paramname"><em>scan_msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the laser scan data into a 2D image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scan_msg</td><td>LaserScan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Image created from the laser scan. </dd></dl>
+
+</div>
+</div>
+<a id="a885ac7202b59c807423b81d0704567f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885ac7202b59c807423b81d0704567f8">&#9670;&nbsp;</a></span>mapCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::mapCallback </td>
+          <td>(</td>
+          <td class="paramtype">const nav_msgs::msg::OccupancyGrid::SharedPtr&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for the Occupancy Grid Map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">msg</td><td>Occupancy Grid message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeb890559768c7fabae668c2a01c74284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb890559768c7fabae668c2a01c74284">&#9670;&nbsp;</a></span>quaternionToYaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CylinderDetector::quaternionToYaw </td>
+          <td>(</td>
+          <td class="paramtype">const geometry_msgs::msg::Quaternion &amp;&#160;</td>
+          <td class="paramname"><em>q</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts quaternion to yaw (theta). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">q</td><td>Quaternion representing orientation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Yaw angle (theta) in radians. </dd></dl>
+
+</div>
+</div>
+<a id="a9436b075fb859638bbbb903cfc1afb92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9436b075fb859638bbbb903cfc1afb92">&#9670;&nbsp;</a></span>scanCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::scanCallback </td>
+          <td>(</td>
+          <td class="paramtype">const sensor_msgs::msg::LaserScan::SharedPtr&#160;</td>
+          <td class="paramname"><em>scan_msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback function for LaserScan. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scan_msg</td><td>LaserScan message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a032e436c1d25d221ddc4932d95f420bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032e436c1d25d221ddc4932d95f420bf">&#9670;&nbsp;</a></span>setCirclePoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CylinderDetector::setCirclePoints </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; int8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>center_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>center_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Marks the points of a circle on the map. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Map data array. </td></tr>
+    <tr><td class="paramname">width</td><td>Map width in cells. </td></tr>
+    <tr><td class="paramname">center_x</td><td>Center X of the circle. </td></tr>
+    <tr><td class="paramname">center_y</td><td>Center Y of the circle. </td></tr>
+    <tr><td class="paramname">x</td><td>X offset for the point. </td></tr>
+    <tr><td class="paramname">y</td><td>Y offset for the point. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae21f78fbac4a4fcf39196aafb8546f08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae21f78fbac4a4fcf39196aafb8546f08">&#9670;&nbsp;</a></span>transformToGlobalFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">geometry_msgs::msg::Point CylinderDetector::transformToGlobalFrame </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y_local</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const geometry_msgs::msg::Transform &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transforms a point from the robot frame to the global frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_local</td><td>X coordinate in robot's frame. </td></tr>
+    <tr><td class="paramname">y_local</td><td>Y coordinate in robot's frame. </td></tr>
+    <tr><td class="paramname">transform</td><td>Transform from the robot frame to the map frame. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transformed point in the global frame. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="af41d2e6a8276b40ef52f8ad5a491d10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41d2e6a8276b40ef52f8ad5a491d10d">&#9670;&nbsp;</a></span>laser_scan_subscriber_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;sensor_msgs::msg::LaserScan&gt;::SharedPtr CylinderDetector::laser_scan_subscriber_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7488470c8d0575a3b9f26dd6252c844b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7488470c8d0575a3b9f26dd6252c844b">&#9670;&nbsp;</a></span>map_publisher_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Publisher&lt;nav_msgs::msg::OccupancyGrid&gt;::SharedPtr CylinderDetector::map_publisher_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b186a7749cb7a5f8dddc76869808d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b186a7749cb7a5f8dddc76869808d47">&#9670;&nbsp;</a></span>map_subscription_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::Subscription&lt;nav_msgs::msg::OccupancyGrid&gt;::SharedPtr CylinderDetector::map_subscription_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa39ab5d5db699c284487e80fbb54a114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa39ab5d5db699c284487e80fbb54a114">&#9670;&nbsp;</a></span>modified_map_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">nav_msgs::msg::OccupancyGrid CylinderDetector::modified_map_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ca2c7ff3a43ead7259588c5a6c7bcd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ca2c7ff3a43ead7259588c5a6c7bcd6">&#9670;&nbsp;</a></span>tf_buffer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf2_ros::Buffer CylinderDetector::tf_buffer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfd458e868243157ffcc4408d3b00956"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfd458e868243157ffcc4408d3b00956">&#9670;&nbsp;</a></span>tf_listener_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tf2_ros::TransformListener CylinderDetector::tf_listener_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63e7fc59239e79f47c491f2cc13bfdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63e7fc59239e79f47c491f2cc13bfdaa">&#9670;&nbsp;</a></span>timer_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">rclcpp::TimerBase::SharedPtr CylinderDetector::timer_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c2053d357a92d7df5447ea93ab56e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c2053d357a92d7df5447ea93ab56e4e">&#9670;&nbsp;</a></span>transform_stamped_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">geometry_msgs::msg::TransformStamped CylinderDetector::transform_stamped_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>cylinder_detector.cpp</li>
+<li><a class="el" href="cylinder__detector_8cpp.html">cylinder_detector.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

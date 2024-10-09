@@ -28,6 +28,60 @@ Collaboration diagram for Scan\+Matching\+Localizer\+:\nopagebreak
 \item 
 \mbox{\hyperlink{classScanMatchingLocalizer_a2311166d8e8c1327f0e2edb03d7814d9}{Scan\+Matching\+Localizer}} ()
 \begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classScanMatchingLocalizer}{Scan\+Matching\+Localizer}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classScanMatchingLocalizer_a7dea1b3e4cbcd36d01e2397ee0645a00}{map\+Callback}} (const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr map\+Msg)
+\begin{DoxyCompactList}\small\item\em Callback function for processing incoming occupancy grid messages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScanMatchingLocalizer_a78cbea8535c5891761f8851b6c5a76ea}{scan\+Callback}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr scan\+Msg)
+\begin{DoxyCompactList}\small\item\em Callback function for processing incoming laser scan messages. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_a6f90979bc4f2e407c72372176841314a}{extract\+Map\+Section}} (double robot\+\_\+x, double robot\+\_\+y, double map\+\_\+scale, double origin\+\_\+x, double origin\+\_\+y, cv\+::\+Mat \&map\+\_\+image, int section\+\_\+size)
+\begin{DoxyCompactList}\small\item\em Extracts a section of the map centered on the robot\textquotesingle{}s position. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_ac863d9514e5cd7f81b2f990485de7065}{extract\+Edges}} (cv\+::\+Mat \&input\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Detects edges in the given input image. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_aa8c1343879ef9a338d568cf8613f9d49}{laser\+Scan\+To\+Mat}} (const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr \&scan)
+\begin{DoxyCompactList}\small\item\em Converts a laser scan message to a cv\+::\+Mat image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScanMatchingLocalizer_a9825a490251857b45879affdd82313ff}{calculate\+Yaw\+Change}} (cv\+::\+Mat \&map\+\_\+edges, cv\+::\+Mat \&laser\+\_\+image)
+\begin{DoxyCompactList}\small\item\em Calculates the yaw change based on the edges of the map and the laser scan image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScanMatchingLocalizer_a7947b4ccef46eedc9f9fd9dc4bbb3c53}{propagate\+Robot}} ()
+\begin{DoxyCompactList}\small\item\em Propagates the robot\textquotesingle{}s position using simplified odometry. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_a28f87075b06209f8971b49f8c36b53d5}{occupancy\+Grid\+To\+Image}} (const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr grid)
+\begin{DoxyCompactList}\small\item\em Converts an occupancy grid message to a cv\+::\+Mat image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid $>$\+::Shared\+Ptr \mbox{\hyperlink{classScanMatchingLocalizer_ad1bb142ad98872d800a0ec1693ed203d}{map\+\_\+subscriber\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Subscriber for the occupancy grid map. \end{DoxyCompactList}\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan $>$\+::Shared\+Ptr \mbox{\hyperlink{classScanMatchingLocalizer_a7058a79df93ca8c930cff0134916252f}{scan\+\_\+subscriber\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Subscriber for the laser scan data. \end{DoxyCompactList}\item 
+rclcpp\+::\+Publisher$<$ geometry\+\_\+msgs\+::msg\+::\+Twist $>$\+::Shared\+Ptr \mbox{\hyperlink{classScanMatchingLocalizer_a30a09a63672f1f84be0ee7d68eef1281}{odom\+\_\+publisher\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Publisher for velocity commands. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classScanMatchingLocalizer_a5201af7257421c44ec1c7bdd95a44c60}{relative\+\_\+orientaion\+\_\+}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Variable to keep track of relative orientation. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_af4021fd0b24aea251dbbb61b4d3bae3f}{map\+\_\+image\+\_\+}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_ad23105d15be89bd02a5489429711f13e}{map\+\_\+edges\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Images for the map and edges. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classScanMatchingLocalizer_ad233e6bac55a6b7944fed73b8d0ffefa}{map\+\_\+scale\+\_\+}}
+\item 
+double \mbox{\hyperlink{classScanMatchingLocalizer_ad9df89550733a38a55d46424884495e4}{origin\+\_\+x\+\_\+}}
+\item 
+double \mbox{\hyperlink{classScanMatchingLocalizer_a53bbe81e0f49ebd42b9dda54e9658fff}{origin\+\_\+y\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Map scaling and origin coordinates. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classScanMatchingLocalizer_a51b9c8a7905c00b58199f25d08ae5710}{map\+\_\+size\+\_\+x\+\_\+}}
+\item 
+int \mbox{\hyperlink{classScanMatchingLocalizer_a430d8011631b1936d0053dd587919d8c}{map\+\_\+size\+\_\+y\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Size of the map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classScanMatchingLocalizer_a888f8d55cde5a20fede38f9780aeab6b}{map\+\_\+received\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the map has been received. \end{DoxyCompactList}\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_a151a795508601238c2507c155a982c25}{laser\+\_\+image\+\_\+}}
+\item 
+cv\+::\+Mat \mbox{\hyperlink{classScanMatchingLocalizer_a163c24a47fed3cd34d4b2fd80cfbf9bc}{map\+\_\+section\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Images for the laser scan and extracted map section. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classScanMatchingLocalizer_a663490a7c485f96291707600e45d4b77}{first\+\_\+scan\+\_\+}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether this is the first scan. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classScanMatchingLocalizer_a172853064ea91ea50836268e972d4ba1}{angle\+\_\+difference\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Variable to store the angle difference. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -50,6 +104,295 @@ Constructs a \mbox{\hyperlink{classScanMatchingLocalizer}{Scan\+Matching\+Locali
 
 Initializes the node, sets up subscribers for the occupancy grid and laser scan topics, and creates a publisher for velocity commands. Additionally, it initializes Open\+CV windows for displaying the map and laser scan images. 
 
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a9825a490251857b45879affdd82313ff}\label{classScanMatchingLocalizer_a9825a490251857b45879affdd82313ff}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!calculateYawChange@{calculateYawChange}}
+\index{calculateYawChange@{calculateYawChange}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{calculateYawChange()}{calculateYawChange()}}
+{\footnotesize\ttfamily void Scan\+Matching\+Localizer\+::calculate\+Yaw\+Change (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{map\+\_\+edges,  }\item[{cv\+::\+Mat \&}]{laser\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Calculates the yaw change based on the edges of the map and the laser scan image. 
+
+This function implements feature matching logic to calculate the yaw difference between the detected edges in the map and the laser scan.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+\_\+edges} & The edges of the map extracted from the map section. \\
+\hline
+{\em laser\+\_\+image} & The image generated from the laser scan data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScanMatchingLocalizer_ac863d9514e5cd7f81b2f990485de7065}\label{classScanMatchingLocalizer_ac863d9514e5cd7f81b2f990485de7065}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!extractEdges@{extractEdges}}
+\index{extractEdges@{extractEdges}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{extractEdges()}{extractEdges()}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::extract\+Edges (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{input\+\_\+image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Detects edges in the given input image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+\_\+image} & The input image in which to detect edges. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cv\+::\+Mat containing the detected edges. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a6f90979bc4f2e407c72372176841314a}\label{classScanMatchingLocalizer_a6f90979bc4f2e407c72372176841314a}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!extractMapSection@{extractMapSection}}
+\index{extractMapSection@{extractMapSection}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{extractMapSection()}{extractMapSection()}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::extract\+Map\+Section (\begin{DoxyParamCaption}\item[{double}]{robot\+\_\+x,  }\item[{double}]{robot\+\_\+y,  }\item[{double}]{map\+\_\+scale,  }\item[{double}]{origin\+\_\+x,  }\item[{double}]{origin\+\_\+y,  }\item[{cv\+::\+Mat \&}]{map\+\_\+image,  }\item[{int}]{section\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Extracts a section of the map centered on the robot\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot\+\_\+x} & The x-\/coordinate of the robot\textquotesingle{}s position. \\
+\hline
+{\em robot\+\_\+y} & The y-\/coordinate of the robot\textquotesingle{}s position. \\
+\hline
+{\em map\+\_\+scale} & The scale of the map. \\
+\hline
+{\em origin\+\_\+x} & The x-\/coordinate of the map\textquotesingle{}s origin. \\
+\hline
+{\em origin\+\_\+y} & The y-\/coordinate of the map\textquotesingle{}s origin. \\
+\hline
+{\em map\+\_\+image} & The map image to extract from. \\
+\hline
+{\em section\+\_\+size} & The size of the section to extract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cv\+::\+Mat containing the extracted map section. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanMatchingLocalizer_aa8c1343879ef9a338d568cf8613f9d49}\label{classScanMatchingLocalizer_aa8c1343879ef9a338d568cf8613f9d49}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!laserScanToMat@{laserScanToMat}}
+\index{laserScanToMat@{laserScanToMat}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{laserScanToMat()}{laserScanToMat()}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::laser\+Scan\+To\+Mat (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr \&}]{scan }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts a laser scan message to a cv\+::\+Mat image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan} & A shared pointer to the laser scan message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cv\+::\+Mat representing the laser scan as an image. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a7dea1b3e4cbcd36d01e2397ee0645a00}\label{classScanMatchingLocalizer_a7dea1b3e4cbcd36d01e2397ee0645a00}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!mapCallback@{mapCallback}}
+\index{mapCallback@{mapCallback}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{mapCallback()}{mapCallback()}}
+{\footnotesize\ttfamily void Scan\+Matching\+Localizer\+::map\+Callback (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr}]{map\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function for processing incoming occupancy grid messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map\+Msg} & A shared pointer to the occupancy grid message received. This function converts the occupancy grid to an image and marks that the map has been received. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a28f87075b06209f8971b49f8c36b53d5}\label{classScanMatchingLocalizer_a28f87075b06209f8971b49f8c36b53d5}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!occupancyGridToImage@{occupancyGridToImage}}
+\index{occupancyGridToImage@{occupancyGridToImage}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{occupancyGridToImage()}{occupancyGridToImage()}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::occupancy\+Grid\+To\+Image (\begin{DoxyParamCaption}\item[{const nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid\+::\+Shared\+Ptr}]{grid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Converts an occupancy grid message to a cv\+::\+Mat image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em grid} & A shared pointer to the occupancy grid message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A cv\+::\+Mat representation of the occupancy grid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a7947b4ccef46eedc9f9fd9dc4bbb3c53}\label{classScanMatchingLocalizer_a7947b4ccef46eedc9f9fd9dc4bbb3c53}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!propagateRobot@{propagateRobot}}
+\index{propagateRobot@{propagateRobot}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{propagateRobot()}{propagateRobot()}}
+{\footnotesize\ttfamily void Scan\+Matching\+Localizer\+::propagate\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Propagates the robot\textquotesingle{}s position using simplified odometry. 
+
+This function publishes velocity commands to move the robot based on the calculated orientation. \mbox{\Hypertarget{classScanMatchingLocalizer_a78cbea8535c5891761f8851b6c5a76ea}\label{classScanMatchingLocalizer_a78cbea8535c5891761f8851b6c5a76ea}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!scanCallback@{scanCallback}}
+\index{scanCallback@{scanCallback}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{scanCallback()}{scanCallback()}}
+{\footnotesize\ttfamily void Scan\+Matching\+Localizer\+::scan\+Callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan\+::\+Shared\+Ptr}]{scan\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Callback function for processing incoming laser scan messages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scan\+Msg} & A shared pointer to the laser scan message received. This function converts the laser scan data to an image, extracts a section of the map around the robot, detects edges in the map section, and updates the robot\textquotesingle{}s position using scan matching. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classScanMatchingLocalizer_a172853064ea91ea50836268e972d4ba1}\label{classScanMatchingLocalizer_a172853064ea91ea50836268e972d4ba1}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!angle\_difference\_@{angle\_difference\_}}
+\index{angle\_difference\_@{angle\_difference\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{angle\_difference\_}{angle\_difference\_}}
+{\footnotesize\ttfamily double Scan\+Matching\+Localizer\+::angle\+\_\+difference\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable to store the angle difference. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a663490a7c485f96291707600e45d4b77}\label{classScanMatchingLocalizer_a663490a7c485f96291707600e45d4b77}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!first\_scan\_@{first\_scan\_}}
+\index{first\_scan\_@{first\_scan\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{first\_scan\_}{first\_scan\_}}
+{\footnotesize\ttfamily bool Scan\+Matching\+Localizer\+::first\+\_\+scan\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating whether this is the first scan. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a151a795508601238c2507c155a982c25}\label{classScanMatchingLocalizer_a151a795508601238c2507c155a982c25}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!laser\_image\_@{laser\_image\_}}
+\index{laser\_image\_@{laser\_image\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{laser\_image\_}{laser\_image\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::laser\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_ad23105d15be89bd02a5489429711f13e}\label{classScanMatchingLocalizer_ad23105d15be89bd02a5489429711f13e}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_edges\_@{map\_edges\_}}
+\index{map\_edges\_@{map\_edges\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_edges\_}{map\_edges\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::map\+\_\+edges\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Images for the map and edges. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_af4021fd0b24aea251dbbb61b4d3bae3f}\label{classScanMatchingLocalizer_af4021fd0b24aea251dbbb61b4d3bae3f}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_image\_@{map\_image\_}}
+\index{map\_image\_@{map\_image\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_image\_}{map\_image\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::map\+\_\+image\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a888f8d55cde5a20fede38f9780aeab6b}\label{classScanMatchingLocalizer_a888f8d55cde5a20fede38f9780aeab6b}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_received\_@{map\_received\_}}
+\index{map\_received\_@{map\_received\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_received\_}{map\_received\_}}
+{\footnotesize\ttfamily bool Scan\+Matching\+Localizer\+::map\+\_\+received\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating whether the map has been received. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_ad233e6bac55a6b7944fed73b8d0ffefa}\label{classScanMatchingLocalizer_ad233e6bac55a6b7944fed73b8d0ffefa}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_scale\_@{map\_scale\_}}
+\index{map\_scale\_@{map\_scale\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_scale\_}{map\_scale\_}}
+{\footnotesize\ttfamily double Scan\+Matching\+Localizer\+::map\+\_\+scale\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a163c24a47fed3cd34d4b2fd80cfbf9bc}\label{classScanMatchingLocalizer_a163c24a47fed3cd34d4b2fd80cfbf9bc}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_section\_@{map\_section\_}}
+\index{map\_section\_@{map\_section\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_section\_}{map\_section\_}}
+{\footnotesize\ttfamily cv\+::\+Mat Scan\+Matching\+Localizer\+::map\+\_\+section\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Images for the laser scan and extracted map section. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a51b9c8a7905c00b58199f25d08ae5710}\label{classScanMatchingLocalizer_a51b9c8a7905c00b58199f25d08ae5710}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_size\_x\_@{map\_size\_x\_}}
+\index{map\_size\_x\_@{map\_size\_x\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_size\_x\_}{map\_size\_x\_}}
+{\footnotesize\ttfamily int Scan\+Matching\+Localizer\+::map\+\_\+size\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a430d8011631b1936d0053dd587919d8c}\label{classScanMatchingLocalizer_a430d8011631b1936d0053dd587919d8c}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_size\_y\_@{map\_size\_y\_}}
+\index{map\_size\_y\_@{map\_size\_y\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_size\_y\_}{map\_size\_y\_}}
+{\footnotesize\ttfamily int Scan\+Matching\+Localizer\+::map\+\_\+size\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Size of the map. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_ad1bb142ad98872d800a0ec1693ed203d}\label{classScanMatchingLocalizer_ad1bb142ad98872d800a0ec1693ed203d}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!map\_subscriber\_@{map\_subscriber\_}}
+\index{map\_subscriber\_@{map\_subscriber\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{map\_subscriber\_}{map\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$nav\+\_\+msgs\+::msg\+::\+Occupancy\+Grid$>$\+::Shared\+Ptr Scan\+Matching\+Localizer\+::map\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subscriber for the occupancy grid map. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a30a09a63672f1f84be0ee7d68eef1281}\label{classScanMatchingLocalizer_a30a09a63672f1f84be0ee7d68eef1281}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!odom\_publisher\_@{odom\_publisher\_}}
+\index{odom\_publisher\_@{odom\_publisher\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{odom\_publisher\_}{odom\_publisher\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Publisher$<$geometry\+\_\+msgs\+::msg\+::\+Twist$>$\+::Shared\+Ptr Scan\+Matching\+Localizer\+::odom\+\_\+publisher\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Publisher for velocity commands. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_ad9df89550733a38a55d46424884495e4}\label{classScanMatchingLocalizer_ad9df89550733a38a55d46424884495e4}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!origin\_x\_@{origin\_x\_}}
+\index{origin\_x\_@{origin\_x\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{origin\_x\_}{origin\_x\_}}
+{\footnotesize\ttfamily double Scan\+Matching\+Localizer\+::origin\+\_\+x\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a53bbe81e0f49ebd42b9dda54e9658fff}\label{classScanMatchingLocalizer_a53bbe81e0f49ebd42b9dda54e9658fff}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!origin\_y\_@{origin\_y\_}}
+\index{origin\_y\_@{origin\_y\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{origin\_y\_}{origin\_y\_}}
+{\footnotesize\ttfamily double Scan\+Matching\+Localizer\+::origin\+\_\+y\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Map scaling and origin coordinates. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a5201af7257421c44ec1c7bdd95a44c60}\label{classScanMatchingLocalizer_a5201af7257421c44ec1c7bdd95a44c60}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!relative\_orientaion\_@{relative\_orientaion\_}}
+\index{relative\_orientaion\_@{relative\_orientaion\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{relative\_orientaion\_}{relative\_orientaion\_}}
+{\footnotesize\ttfamily double Scan\+Matching\+Localizer\+::relative\+\_\+orientaion\+\_\+ = 0.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Variable to keep track of relative orientation. 
+
+\mbox{\Hypertarget{classScanMatchingLocalizer_a7058a79df93ca8c930cff0134916252f}\label{classScanMatchingLocalizer_a7058a79df93ca8c930cff0134916252f}} 
+\index{ScanMatchingLocalizer@{ScanMatchingLocalizer}!scan\_subscriber\_@{scan\_subscriber\_}}
+\index{scan\_subscriber\_@{scan\_subscriber\_}!ScanMatchingLocalizer@{ScanMatchingLocalizer}}
+\doxysubsubsection{\texorpdfstring{scan\_subscriber\_}{scan\_subscriber\_}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan$>$\+::Shared\+Ptr Scan\+Matching\+Localizer\+::scan\+\_\+subscriber\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Subscriber for the laser scan data. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-sprint2.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{sprint2_8cpp}{sprint2.\+cpp}}\end{DoxyCompactItemize}
