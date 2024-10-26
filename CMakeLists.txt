@@ -18,6 +18,8 @@ find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
+find_package(nav2_msgs REQUIRED)
+find_package(rclcpp_action REQUIRED)
 
 include_directories(include ${OpenCV_INCLUDE_DIRS})
 
@@ -42,6 +44,9 @@ ament_target_dependencies(map_compare rclcpp OpenCV)
 add_executable(cylinder_detector src/cylinder_detector.cpp)
 ament_target_dependencies(cylinder_detector rclcpp sensor_msgs geometry_msgs visualization_msgs tf2_ros tf2_geometry_msgs nav_msgs OpenCV) 
 
+add_executable(nav_to_goal src/nav_to_goal.cpp)
+ament_target_dependencies(nav_to_goal rclcpp sensor_msgs geometry_msgs visualization_msgs tf2_ros tf2_geometry_msgs nav_msgs OpenCV nav2_msgs rclcpp_action) 
+
 install(TARGETS
   lab1
   lab2
@@ -50,6 +55,7 @@ install(TARGETS
   sprint2
   map_compare
   cylinder_detector
+  nav_to_goal
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

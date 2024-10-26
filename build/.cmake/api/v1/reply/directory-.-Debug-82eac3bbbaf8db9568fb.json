@@ -36,13 +36,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 45,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 55,
+				"line" : 61,
 				"parent" : 0
 			},
 			{
@@ -280,7 +280,7 @@
 				"sprint2"
 			],
 			"targetId" : "sprint2::@6890427a1f51a3e7e1df",
-			"targetIndex" : 7,
+			"targetIndex" : 8,
 			"type" : "target"
 		},
 		{
@@ -305,6 +305,18 @@
 			],
 			"targetId" : "cylinder_detector::@6890427a1f51a3e7e1df",
 			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib/lab",
+			"paths" : 
+			[
+				"nav_to_goal"
+			],
+			"targetId" : "nav_to_goal::@6890427a1f51a3e7e1df",
+			"targetIndex" : 7,
 			"type" : "target"
 		},
 		{

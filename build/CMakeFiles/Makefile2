@@ -70,6 +70,7 @@ all: CMakeFiles/lab5.dir/all
 all: CMakeFiles/sprint2.dir/all
 all: CMakeFiles/map_compare.dir/all
 all: CMakeFiles/cylinder_detector.dir/all
+all: CMakeFiles/nav_to_goal.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -86,6 +87,7 @@ clean: CMakeFiles/lab5.dir/clean
 clean: CMakeFiles/sprint2.dir/clean
 clean: CMakeFiles/map_compare.dir/clean
 clean: CMakeFiles/cylinder_detector.dir/clean
+clean: CMakeFiles/nav_to_goal.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -251,7 +253,7 @@ CMakeFiles/lab5.dir/clean:
 CMakeFiles/sprint2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sprint2.dir/build.make CMakeFiles/sprint2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sprint2.dir/build.make CMakeFiles/sprint2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/ros2_ws/src/lab/build/CMakeFiles --progress-num=13,14 "Built target sprint2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/ros2_ws/src/lab/build/CMakeFiles --progress-num=15,16 "Built target sprint2"
 .PHONY : CMakeFiles/sprint2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -321,6 +323,32 @@ cylinder_detector: CMakeFiles/cylinder_detector.dir/rule
 CMakeFiles/cylinder_detector.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder_detector.dir/build.make CMakeFiles/cylinder_detector.dir/clean
 .PHONY : CMakeFiles/cylinder_detector.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nav_to_goal.dir
+
+# All Build rule for target.
+CMakeFiles/nav_to_goal.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/student/ros2_ws/src/lab/build/CMakeFiles --progress-num=13,14 "Built target nav_to_goal"
+.PHONY : CMakeFiles/nav_to_goal.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nav_to_goal.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/ros2_ws/src/lab/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nav_to_goal.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/student/ros2_ws/src/lab/build/CMakeFiles 0
+.PHONY : CMakeFiles/nav_to_goal.dir/rule
+
+# Convenience name for target.
+nav_to_goal: CMakeFiles/nav_to_goal.dir/rule
+.PHONY : nav_to_goal
+
+# clean rule for target.
+CMakeFiles/nav_to_goal.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/clean
+.PHONY : CMakeFiles/nav_to_goal.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -288,6 +288,19 @@ cylinder_detector/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cylinder_detector.dir/build.make CMakeFiles/cylinder_detector.dir/build
 .PHONY : cylinder_detector/fast
 
+#=============================================================================
+# Target rules for targets named nav_to_goal
+
+# Build rule for target.
+nav_to_goal: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nav_to_goal
+.PHONY : nav_to_goal
+
+# fast build rule for target.
+nav_to_goal/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/build
+.PHONY : nav_to_goal/fast
+
 src/cylinder_detector.o: src/cylinder_detector.cpp.o
 .PHONY : src/cylinder_detector.o
 
@@ -432,6 +445,30 @@ src/map_compare.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/map_compare.dir/build.make CMakeFiles/map_compare.dir/src/map_compare.cpp.s
 .PHONY : src/map_compare.cpp.s
 
+src/nav_to_goal.o: src/nav_to_goal.cpp.o
+.PHONY : src/nav_to_goal.o
+
+# target to build an object file
+src/nav_to_goal.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/src/nav_to_goal.cpp.o
+.PHONY : src/nav_to_goal.cpp.o
+
+src/nav_to_goal.i: src/nav_to_goal.cpp.i
+.PHONY : src/nav_to_goal.i
+
+# target to preprocess a source file
+src/nav_to_goal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/src/nav_to_goal.cpp.i
+.PHONY : src/nav_to_goal.cpp.i
+
+src/nav_to_goal.s: src/nav_to_goal.cpp.s
+.PHONY : src/nav_to_goal.s
+
+# target to generate assembly for a file
+src/nav_to_goal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nav_to_goal.dir/build.make CMakeFiles/nav_to_goal.dir/src/nav_to_goal.cpp.s
+.PHONY : src/nav_to_goal.cpp.s
+
 src/sprint2.o: src/sprint2.cpp.o
 .PHONY : src/sprint2.o
 
@@ -477,6 +514,7 @@ help:
 	@echo "... lab4"
 	@echo "... lab5"
 	@echo "... map_compare"
+	@echo "... nav_to_goal"
 	@echo "... sprint2"
 	@echo "... src/cylinder_detector.o"
 	@echo "... src/cylinder_detector.i"
@@ -496,6 +534,9 @@ help:
 	@echo "... src/map_compare.o"
 	@echo "... src/map_compare.i"
 	@echo "... src/map_compare.s"
+	@echo "... src/nav_to_goal.o"
+	@echo "... src/nav_to_goal.i"
+	@echo "... src/nav_to_goal.s"
 	@echo "... src/sprint2.o"
 	@echo "... src/sprint2.i"
 	@echo "... src/sprint2.s"

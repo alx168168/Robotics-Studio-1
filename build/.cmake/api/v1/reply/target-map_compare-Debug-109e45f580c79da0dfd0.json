@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lab2"
+			"path" : "map_compare"
 		}
 	],
 	"backtrace" : 1,
@@ -31,25 +31,31 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 27,
+				"line" : 41,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
+				"line" : 50,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 28,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 1,
 				"line" : 145,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 151,
 				"parent" : 3
 			},
 			{
@@ -61,7 +67,7 @@
 			{
 				"command" : 5,
 				"file" : 0,
-				"line" : 22,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -81,15 +87,15 @@
 					"fragment" : "-g"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"fragment" : "-Wall"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"fragment" : "-Wextra"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"fragment" : "-Wpedantic"
 				}
 			],
@@ -107,27 +113,18 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
 					"path" : "/home/student/ros2_ws/src/lab/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
+					"isSystem" : true,
 					"path" : "/usr/include/opencv4"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 8,
 					"isSystem" : true,
 					"path" : "/opt/ros/humble/include/rclcpp"
-				},
-				{
-					"backtrace" : 7,
-					"isSystem" : true,
-					"path" : "/opt/ros/humble/include/sensor_msgs"
-				},
-				{
-					"backtrace" : 7,
-					"isSystem" : true,
-					"path" : "/opt/ros/humble/include/std_msgs"
 				},
 				{
 					"backtrace" : 4,
@@ -248,11 +245,6 @@
 					"backtrace" : 4,
 					"isSystem" : true,
 					"path" : "/opt/ros/humble/include/rosidl_typesupport_c"
-				},
-				{
-					"backtrace" : 4,
-					"isSystem" : true,
-					"path" : "/opt/ros/humble/include/geometry_msgs"
 				}
 			],
 			"language" : "CXX",
@@ -262,7 +254,7 @@
 			]
 		}
 	],
-	"id" : "lab2::@6890427a1f51a3e7e1df",
+	"id" : "map_compare::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
@@ -299,28 +291,178 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_c.so",
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_fastrtps_cpp.so",
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_c.so",
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.4.5.4d",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_introspection_cpp.so",
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_barcode.so.4.5.4d",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_generator_py.so",
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn_objdetect.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn_superres.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_face.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_hfs.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_img_hash.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_intensity_transform.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_mcc.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_quality.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_rapid.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_reg.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_shape.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_superres.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_tracking.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.5.4d",
 				"role" : "libraries"
 			},
 			{
@@ -424,47 +566,6 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_fastrtps_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_introspection_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_py.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libtracetools.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_c.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_c.so",
-				"role" : "libraries"
-			},
-			{
 				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_fastrtps_c.so",
 				"role" : "libraries"
 			},
@@ -473,12 +574,7 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_fastrtps_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_fastrtps_cpp.so",
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_fastrtps_cpp.so",
 				"role" : "libraries"
 			},
 			{
@@ -490,20 +586,15 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/opt/ros/humble/lib/libfastcdr.so.1.0.24",
-				"role" : "libraries"
-			},
-			{
 				"fragment" : "/opt/ros/humble/lib/librmw.so",
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so",
+				"fragment" : "/opt/ros/humble/lib/libfastcdr.so.1.0.24",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_c.so",
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_introspection_c.so",
 				"role" : "libraries"
 			},
 			{
@@ -511,12 +602,7 @@
 				"role" : "libraries"
 			},
 			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_introspection_cpp.so",
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_introspection_cpp.so",
 				"role" : "libraries"
 			},
 			{
@@ -532,70 +618,7 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_c.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_generator_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_py.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_generator_py.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_c.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_generator_c.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_generator_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/usr/lib/x86_64-linux-gnu/libpython3.10.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libsensor_msgs__rosidl_typesupport_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "/opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so",
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_cpp.so",
 				"role" : "libraries"
 			},
 			{
@@ -604,6 +627,30 @@
 			},
 			{
 				"fragment" : "/opt/ros/humble/lib/librosidl_typesupport_cpp.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_py.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_py.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_typesupport_c.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_typesupport_c.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libstatistics_msgs__rosidl_generator_c.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libbuiltin_interfaces__rosidl_generator_c.so",
 				"role" : "libraries"
 			},
 			{
@@ -625,12 +672,115 @@
 			{
 				"fragment" : "-ldl",
 				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libpython3.10.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/opt/ros/humble/lib/libtracetools.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_text.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ml.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_video.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_dnn.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_flann.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "lab2",
-	"nameOnDisk" : "lab2",
+	"name" : "map_compare",
+	"nameOnDisk" : "map_compare",
 	"paths" : 
 	{
 		"build" : ".",
@@ -651,7 +801,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/lab2.cpp",
+			"path" : "src/map_compare.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

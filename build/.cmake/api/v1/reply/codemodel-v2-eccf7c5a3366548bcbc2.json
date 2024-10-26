@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-2a32a598c4eb50725e0d.json",
+					"jsonFile" : "directory-.-Debug-82eac3bbbaf8db9568fb.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
@@ -24,7 +24,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
@@ -47,7 +48,8 @@
 						5,
 						6,
 						7,
-						8
+						8,
+						9
 					]
 				}
 			],
@@ -56,35 +58,35 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cylinder_detector::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cylinder_detector-Debug-a9201f57eeeac8c3bdd5.json",
+					"jsonFile" : "target-cylinder_detector-Debug-c12f487af867ae4f3ec0.json",
 					"name" : "cylinder_detector",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "lab1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab1-Debug-d91facd3ee7e24b95a00.json",
+					"jsonFile" : "target-lab1-Debug-e98ddb2d15a7d97584ae.json",
 					"name" : "lab1",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "lab2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab2-Debug-5d0b260a642cffaae6ba.json",
+					"jsonFile" : "target-lab2-Debug-075e0a0d2fe3e3c1c8f6.json",
 					"name" : "lab2",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "lab4::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab4-Debug-f0d1f4f16a8d66efb53f.json",
+					"jsonFile" : "target-lab4-Debug-4e537897c0c0dab467ba.json",
 					"name" : "lab4",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "lab5::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lab5-Debug-5c09247d4259c0c3df87.json",
+					"jsonFile" : "target-lab5-Debug-7da0181fb055526dee3b.json",
 					"name" : "lab5",
 					"projectIndex" : 0
 				},
@@ -98,14 +100,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "map_compare::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-map_compare-Debug-dd5ff7a0b95b47f86de7.json",
+					"jsonFile" : "target-map_compare-Debug-109e45f580c79da0dfd0.json",
 					"name" : "map_compare",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "nav_to_goal::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nav_to_goal-Debug-428a844fc1cbfdbbf480.json",
+					"name" : "nav_to_goal",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "sprint2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sprint2-Debug-0b1be3f584799b38ceff.json",
+					"jsonFile" : "target-sprint2-Debug-da09eefd9b1113bfd9fc.json",
 					"name" : "sprint2",
 					"projectIndex" : 0
 				},
